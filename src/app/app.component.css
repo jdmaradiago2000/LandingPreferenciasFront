@@ -1,0 +1,12 @@
+.promotionalMessage{
+    margin: auto;
+    font-family: telefonicaSansDemiboldItalic !important;
+    color: var(--grey-1);
+    font-size: 25px;
+}
+
+.divMessage{
+    position: fixed;
+    bottom: 50px;
+    margin: 20px;
+}

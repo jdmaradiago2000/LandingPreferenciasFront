@@ -1,0 +1,21 @@
+.logo{
+    width: 120px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.title{
+    font-family: telefonicaSansDemiboldItalic !important;
+    color: var(--movistar-blue);
+    font-size: 30px;
+}
+
+.alingCenter{
+    margin: auto;
+    vertical-align: middle;
+}
+
+.row{
+    width: 100%;
+}
