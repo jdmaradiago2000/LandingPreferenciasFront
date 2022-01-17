@@ -23,7 +23,7 @@
 	--grey-0: #3a3a3a	;
 	--grey-1: #666666	;
 	--grey-2: #757575	;
-	--grey-3: #dddddd	;
+	--grey-3: #b0b6ca	;
 	--grey-4: #eeeeee	;
 	--grey-5: #f6f6f6	;
 	--grey-shadow:#b6b7b7	;
@@ -70,7 +70,7 @@
   @font-face {
 	font-family: telefonicaSansHairline;
 	src: url(telefonica-sans-hairline.woff) format("woff"),
-		url(telefonica-sans-hairline.eot);
+		 url(telefonica-sans-hairline.eot);
   }
 
   @font-face {

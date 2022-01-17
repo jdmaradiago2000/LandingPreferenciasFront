@@ -1,0 +1,131 @@
+
+  .error{
+    font-family: telefonicaSansLight;
+    font-size: 16px;
+    font-weight: normal;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: 0.31;
+    letter-spacing: normal;
+    color: var(--pepper);
+  }
+
+  input[type="number"]::-webkit-outer-spin-button,
+  input[type="number"]::-webkit-inner-spin-button {
+      -webkit-appearance: none;
+      margin: 0;
+  }
+  input[type="number"] {
+      -moz-appearance: textfield;
+  }
+
+  .description {
+    font-size: 16px;
+    font-weight: normal;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: 1.31;
+    letter-spacing: normal;
+    text-align: left;
+    margin-bottom: 5px;
+    margin-top: 15px;
+    color: black;
+    font-family: telefonicaSansLight;
+  }
+  
+  .input-text{
+    width: 100%;
+    height: 40px;
+    border-radius: 4px;
+    border: solid 1px var(--grey_6);
+    background-color: #ffffff;   
+    padding: 8px;
+  }
+  
+  .input-text-captcha{
+    width: 100%;
+    height: 40px;
+    border-top-left-radius: 4px;
+    border-bottom-left-radius: 4px;
+    border: solid 1px var(--grey_6);
+    background-color: #ffffff;   
+    padding: 8px;
+  }
+  
+  .continue{
+    margin-top: 15px;
+    width: 100%;
+    height: 50px;
+    border-radius: 4px;
+    background-color: var(--movistar-blueDark);
+    color: #ffffff;
+    font-family: telefonicaSansHairline;
+    font-size: 18px;
+    font-weight: normal;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: 1.28;
+    letter-spacing: normal;
+    text-align: center;
+  }
+  
+  .form-login{
+    max-width: 450px;
+    background-color: #b0b6ca;
+    padding: 25px;
+    box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.16);
+    border-radius: 40px;
+    margin-left: 50px;
+
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=80)";       /* IE 8 */
+    filter: alpha(opacity=80);  /* IE 5-7 */
+    -moz-opacity: 0.8;          /* Netscape */
+    -khtml-opacity: 0.8;        /* Safari 1.x */
+    opacity: 0.8;               /* Good browsers */
+  }
+  
+  .send-captcha{
+    border-top-right-radius: 4px;
+    border-bottom-right-radius: 4px;
+    padding-left: 10px;
+    width: 40px; 
+    height: 40px;
+  }
+  
+  .captcha-align{
+    display: flex; 
+    width: 50%;
+  }
+
+  .imgCaptcha{
+    height: 70%; 
+    width: 100%;
+    margin-top: 5px;
+  }
+
+  .imgRefresh
+  {
+    margin-right: 20px;
+    cursor: pointer;
+  }
+
+  .send-captcha{
+    border-top-right-radius: 4px;
+    border-bottom-right-radius: 4px;
+    padding-left: 10px;
+    width: 40px; 
+    height: 38px;
+  }
+
+  .active
+  {
+    color: #ffffff;
+    background-color: #00a9e0;
+    border: solid 1px #00a9e0;
+  }
+
+  .field{
+    margin: auto;
+    display: flex;
+    align-items: center;
+  }

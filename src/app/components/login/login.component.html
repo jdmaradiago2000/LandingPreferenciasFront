@@ -1,0 +1,74 @@
+<form action="formLogin" >
+  <div class="form-login">
+        <div class="row field">
+          <div class="col-4" >
+              <p class="description">Nombres y Apellidos </p>
+          </div>
+          <div class="col-8">
+            <input class="input-text" placeholder="Ingrese el nombre" type="text" formControlName="Name">
+          </div>
+          <span class="error" *ngIf="form.Name.errors.required && submitted">Por favor ingrese el nombre.</span>
+        </div>
+
+        <div class="row field">
+          <div class="col-4"  >
+              <p class="description">Tipo de documento</p>
+          </div>
+          <div class="col-8">
+            <select name="documentType"  form="" class="input-text"  formControlName="DocumentType">
+              <option value="" selected disabled>Seleccione una opción</option>
+              <option value="{{documentType.id}}" *ngFor="let documentType of documentTypeList">{{documentType.name}}</option>
+          </select>
+          </div>
+          <span class="error" *ngIf="form.DocumentType.errors.maxlength && submitted">*Por favor seleccione una opción.</span>
+        </div>
+
+        <div class="row field">
+          <div class="col-4">
+              <p class="description">Número de Documento</p>
+          </div>
+          <div class="col-8">
+            <input class="input-text" placeholder="" type="text" formControlName="IdentificationDocument">
+          </div>
+          <span class="error" *ngIf="form.IdentificationDocument.errors.required && submitted">*Por favor ingrese el número de Documento.</span>
+      </div>
+
+        <div class="row field">
+          <div class="col-4">
+              <p class="description">Número de Celular</p>
+          </div>
+          <div class="col-8">
+              <input class="input-text" placeholder="Ej. 315000000" type="text"
+                  formControlName="PhoneNumber">
+              <span class="error"
+                  *ngIf="form.PhoneNumber.errors.maxlength">*Máximo 10 digitos.</span>
+              <span class="error"
+                  *ngIf="form.PhoneNumber.errors.pattern">*Por favor Ingrese Unicamente números.</span>
+          </div>
+        </div>
+
+        <div class="row field">
+          <div class="col-6 captcha-align" >
+            <img [src]="imgCaptcha" class="imgCaptcha" />
+            <img src="assets/refresh.svg"  class="send-captcha imgRefresh" (click)="generateCaptcha()">
+        </div>
+        <div class="col-6 captcha-align" >
+          <input type="text" formControlName="textCaptcha" class="form-control"
+          [ngClass]="{ 'is-invalid': submitted && form.textCaptcha.errors}" placeholder="Ingresa código"/>
+          <button class="send-captcha active " (click)="validateCaptcha()" type="button">
+            <img src="assets/send.svg">
+        </button>
+        </div>
+        <div *ngIf="submitted && form.textCaptcha.errors" class="invalid-feedback">
+          <div *ngIf="f.textCaptcha.errors.required">Ingrese el código</div>
+        </div>
+        </div>
+
+         <div class="row field">
+      <div class="col-12">
+          <button class="btn continue" (click)="validate(openInfo)" [disabled]=" !captcha"
+              type="button">INGRESA</button>
+      </div>
+  </div>
+  </div>
+</form>
