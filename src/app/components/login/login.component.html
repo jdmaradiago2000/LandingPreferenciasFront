@@ -1,5 +1,5 @@
 <form action="formLogin" >
-  <div class="form-login">
+  <div class="col-12 col-sm-8 form-login">
         <div class="row field">
           <div class="col-4" >
               <p class="description">Nombres y Apellidos </p>
@@ -66,7 +66,7 @@
 
          <div class="row field">
       <div class="col-12">
-          <button class="btn continue" (click)="validate(openInfo)" [disabled]=" !captcha"
+          <button class="btn continue" (click)="validate()" [disabled]=" !captchaValid"
               type="button">INGRESA</button>
       </div>
   </div>

@@ -13,6 +13,7 @@
     position:fixed;
     bottom:0;
     right: 0;
-    width: 100px;
-    margin: 10px;
+    max-width: 100px;;
+    width: 100%;
+    margin: 0.625rem;
 }
