@@ -2,13 +2,11 @@
     font-family: telefonicaSansDemiboldItalic !important;
     color: var(--grey-1);
     font-size: 1.25rem;
-    line-height: 0.31; 
+    line-height: 0.31rem; 
 }
 
 .divMessage{
-    position: fixed;
-    bottom: 3.125rem;
-    margin: 1.875rem;
+    margin: 1rem;
     margin-left: 3.75rem;
     max-width: 350px;
     width: 100%;
