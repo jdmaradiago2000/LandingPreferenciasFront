@@ -1,4 +1,37 @@
 /* You can add global styles to this file, and also import other style files */
+:root {
+	--movistar-blue: #00a9e0	;
+	--movistar-blueDark: #0098d2	;
+	--movistar-blueLight-70: #4cc2e9	;
+	--movistar-blueLight-50: #7fd4ef	;
+	--movistar-blueLight-20: #b2e5f5	;
+	--movistar-green: #5bc500	;
+	--movistar-greenDark: #499e00	;
+	--movistar-greenLight-40: #ade27f	;
+	--movistar-greenLight-20: #cdedb2	;
+	--pepper: #ff374a	;
+	--pepper-dark: #d73241	;
+	--pepper-light: #ff6173	;
+	--purple: #954b97	;
+	--pink: #e9426d	;
+	--orange: #ec6839	;
+	--egg: #f59c00	;
+	--egg-light: #fce1b2	;
+	--movistar-cool-grey: #2a2a3c	;
+	--black: #000000	;
+	--movistar-gunmetal: #63666d	;
+	--cool-gray-10:#50535a	;
+	--grey-0: #3a3a3a	;
+	--grey-1: #666666	;
+	--grey-2: #757575	;
+	--grey-3: #b0b6ca	;
+	--grey-4: #eeeeee	;
+	--grey-5: #f6f6f6	;
+	--grey-shadow:#b6b7b7	;
+	--white: #ffffff	;
+	--grey-6: #999999	;
+  }
+
 body {
     max-width: 100%;
     height: auto;
@@ -32,4 +65,13 @@ body {
 #progress-bar p {
     color: #999!important;
     line-height: 1.3;
+}
+
+.modal-content{
+    width: 250px;
+    margin: auto;
+    overflow: auto;
+    text-align: center;
+    vertical-align: middle;
+    border-radius: 1rem;
 }

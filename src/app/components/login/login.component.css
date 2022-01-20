@@ -5,7 +5,7 @@
     font-weight: normal;
     font-style: normal;
     font-stretch: normal;
-    line-height: 0.21rem;
+    line-height: 1rem;
     letter-spacing: normal;
     color: var(--pepper);
   }
@@ -24,7 +24,7 @@
     font-weight: normal;
     font-style: normal;
     font-stretch: normal;
-    line-height: 0.90rem;
+    line-height: 1rem;
     letter-spacing: normal;
     text-align: left;
     margin-bottom: 0.5rem;
@@ -61,12 +61,13 @@
     color: #ffffff;
     font-family: telefonicaSansHairline;
     font-size: 1.125rem;
-    font-weight: normal;
+    font-weight: bold;
     font-style: normal;
     font-stretch: normal;
     line-height: 1.28rem;
     letter-spacing: normal;
     text-align: center;
+
   }
   
   .form-login{
@@ -96,7 +97,11 @@
   
   .captcha-align{
     display: flex; 
-    margin-top: 5%;
+    margin-top: 2%;
+  }
+
+  .align{
+    display: flex; 
   }
 
   .imgRefresh

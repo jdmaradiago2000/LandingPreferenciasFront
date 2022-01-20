@@ -3,6 +3,7 @@ import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { DomSanitizer } from '@angular/platform-browser';
 import { LoaderService } from 'src/app/services/loader.service';
 import { LoginService } from 'src/app/services/login.service';
+import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 
 @Component({
   selector: 'app-login',
@@ -16,11 +17,12 @@ export class LoginComponent implements OnInit {
   documentTypeList: any = [{'id':1, 'name':'Cédula de Ciudadania'}, {'id':2, 'name':'Cédula de Extranjería'},
   {'id':3, 'name':'Pasaporte'}, {'id':4, 'name':'Tarjeta de Identidad'}]
   submitted = false;
-
+  submittedCaptcha = false;
 
   constructor(private loginService : LoginService, 
               private _sanitizer: DomSanitizer,
-              private loaderService: LoaderService) { }
+              private loaderService: LoaderService,
+              private modalConfirm: NgbModal,) { }
 
   ngOnInit() {
     this.formLogin = new FormGroup({
@@ -28,7 +30,7 @@ export class LoginComponent implements OnInit {
       PhoneNumber:new FormControl('',[Validators.required,Validators.minLength(10),Validators.maxLength(10),Validators.pattern(/^-?(0|[1-9]\d*)?$/)]),
       IdentificationDocument:new FormControl('',[Validators.required,Validators.minLength(4), Validators.maxLength(10),Validators.pattern(/^-?(0|[1-9]\d*)?$/)]),
       DocumentType:new FormControl('',[Validators.required]),
-      textCaptcha: new FormControl(['', Validators.required]),
+      textCaptcha: new FormControl('', [Validators.required]),
     });
     
     this.getCaptcha();
@@ -57,7 +59,9 @@ export class LoginComponent implements OnInit {
 
   validateCaptcha() {
     this.loaderService.show();
+    this.submittedCaptcha = true;
     this.captchaValid = true;
+    this.loaderService.hide();
     /*this.loginService.validateCaptcha(this.form.textCaptcha.value)
     .subscribe(
       result => {
@@ -75,9 +79,10 @@ export class LoginComponent implements OnInit {
     );*/
   }
 
-  validate(){
+  validate(openInfo:any){
+    this.modalConfirm.open(openInfo, {centered:true});
     this.submitted = true;
-    console.log(this.captchaValid);
+    console.log(this.form.Name.hasError('required'));
   }
 
 }
