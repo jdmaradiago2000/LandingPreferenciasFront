@@ -6,5 +6,6 @@ let prefix=environment.urlBase ;
 
 // ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
 // AUTHENTICATION
-export const generateCaptcha= 'https://10.80.2.89/WCF_RONAN/Captcha.svc/generarCaptcha/';
-export const validateCaptcha= 'https://10.80.2.89/WCF_RONAN/Captcha.svc/validateCaptcha/';
+export const generateCaptcha= prefix + 'Captcha/generarCaptcha/';
+export const validateCaptcha= prefix + 'Captcha/validateCaptcha/';
+export const validateUserInfo= prefix + 'User/ValidateUserInfo/';

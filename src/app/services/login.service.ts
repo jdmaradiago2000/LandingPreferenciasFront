@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpHeaders, HttpClient } from '@angular/common/http';
-import { generateCaptcha, validateCaptcha } from './url';
+import { generateCaptcha, validateCaptcha, validateUserInfo } from './url';
 
 @Injectable({
   providedIn: 'root'
@@ -29,4 +29,7 @@ export class LoginService {
     return this.http.get(validateCaptcha + data, this.getHttpOptions()).pipe();
   }
 
+  ValidateUserInfo(data:any){
+    return this.http.post<any>(validateUserInfo, data, this.getHttpOptions()).pipe();
+  }
 }
