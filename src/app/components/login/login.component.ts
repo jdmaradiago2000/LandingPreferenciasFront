@@ -53,13 +53,16 @@ export class LoginComponent implements OnInit {
       result => {
         this.loaderService.hide();
         this.imgCaptcha = this._sanitizer.bypassSecurityTrustResourceUrl("data:image/png;base64, " + result["data"]);
-      }
-    );
+      }, error => {
+        this.loaderService.hide();
+        this.message = "En este momento no es posible realizar la solicitud intentelo más tarde, Gracias!";
+      });
   }
 
   validateCaptcha() {
-    this.loaderService.show();
+    //this.loaderService.show();
     this.submittedCaptcha = true;
+    this.captchaValid = true;
     this.loginService.validateCaptcha(this.form.textCaptcha.value)
     .subscribe(
       result => {
@@ -73,8 +76,10 @@ export class LoginComponent implements OnInit {
           this.form.textCaptcha.setValue("");
           this.getCaptcha();
         }
-      }
-    );
+      }, error => {
+        this.loaderService.hide();
+        this.message = "En este momento no es posible realizar la solicitud intentelo más tarde, Gracias!";
+      });
   }
 
   validate(openInfo:any){
@@ -105,7 +110,10 @@ export class LoginComponent implements OnInit {
         this.loaderService.hide();
         this.message = result["msg"].toString();
         this.modalConfirm.open(openInfo, {centered:true});
-      }
-    );
+      }, error => {
+        this.loaderService.hide();
+        this.message = "En este momento no es posible realizar la solicitud intentelo más tarde, Gracias!";
+        this.modalConfirm.open(openInfo, {centered:true});
+      });
   }
 }
