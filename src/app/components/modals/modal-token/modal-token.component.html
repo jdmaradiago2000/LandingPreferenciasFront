@@ -1,0 +1,13 @@
+<button type="button" class="btn close" data-dismiss="modal" aria-label="Close" (click)="cancel()">
+  <span aria-hidden="true">&times;</span>
+</button>
+<div class="modal-body">
+  <img class="logo" src='assets/{{image}}' alt="">
+
+  <div class="description">{{message}}</div>
+  <form [formGroup]="Form">
+    <mat-form-field appearance="fill">
+        <input matInput type="input" formControlName="InToken" class="inp">
+      </mat-form-field>
+  </form>
+</div>

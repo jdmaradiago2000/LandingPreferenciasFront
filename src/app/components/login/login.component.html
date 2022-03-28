@@ -1,73 +1,80 @@
 <app-loader></app-loader>
-<form [formGroup]="formLogin" >
+<form [formGroup]="formLogin">
   <div class="col-12 col-sm-10 col-md-12  form-login">
-        <div class="row field">
-          <div class="col-10 col-sm-4 col-md-4"  >
-              <p class="description">Tipo de documento</p>
-          </div>
-          <div class="col-12 col-sm-8 col-md-8">
-            <select name="documentType"  form="" class="input-text"  formControlName="DocumentType">
-              <option value="" selected disabled>Selecciona una opción</option>
-              <option value="{{documentType.id}}" *ngFor="let documentType of documentTypeList">{{documentType.name}}</option>
-          </select>
-          </div>
-          <span class="error" *ngIf="form.DocumentType.errors && submitted">*Por favor selecciona una opción.</span>
-        </div>
-
-        <div class="row field">
-          <div class="col-10 col-sm-4  col-md-4">
-              <p class="description">Número de Documento</p>
-          </div>
-          <div class="col-12 col-sm-8 col-md-8">
-            <input class="input-text" placeholder="" type="text" formControlName="IdentificationDocument">
-          </div>
-          <span class="error" *ngIf="form.IdentificationDocument.errors && submitted">*Por favor ingresa el número de Documento.</span>
+    <div class="row field">
+      <div class="col-10 col-sm-4 col-md-4">
+        <p class="description">Tipo de documento</p>
       </div>
+      <div class="col-12 col-sm-8 col-md-8">
+        <select name="documentType" form="" class="input-text" formControlName="DocumentType">
+          <option value="" selected disabled>Selecciona una opción</option>
+          <option value="{{documentType.id}}" *ngFor="let documentType of documentTypeList">{{documentType.name}}
+          </option>
+        </select>
+      </div>
+      <span class="error" *ngIf="form.DocumentType.errors && submitted">*Por favor selecciona una opción.</span>
+    </div>
 
-        <div class="row field">
-          <div class="col-10 col-sm-4  col-md-4">
-              <p class="description">Número de Celular</p>
-          </div>
-          <div class="col-12 col-sm-8 col-md-8">
-              <input class="input-text" placeholder="Ej. 315000000" type="text"
-                  formControlName="PhoneNumber">
-          </div>
-          <span class="error"
-          *ngIf="form.PhoneNumber.errors != null && form.PhoneNumber.errors.maxlength">*Máximo 10 digitos.</span>
-      <span class="error"
-          *ngIf="form.PhoneNumber.errors != null && form.PhoneNumber.errors.pattern">*Por favor Ingresa Unicamente números.</span>
-          <span class="error" *ngIf="form.PhoneNumber.errors != null && form.PhoneNumber.errors.required && submitted">*Por favor ingresa el número de celular.</span>
-        </div>
+    <div class="row field">
+      <div class="col-10 col-sm-4  col-md-4">
+        <p class="description">Número de Documento</p>
+      </div>
+      <div class="col-12 col-sm-8 col-md-8">
+        <input class="input-text" placeholder="" type="text" formControlName="IdentificationDocument">
+      </div>
+      <span class="error" *ngIf="form.IdentificationDocument.errors && submitted">*Por favor ingresa el número de
+        Documento.</span>
+    </div>
 
-        <div class="row field">
-          <div class="col-12 col-sm-6 col-md-6 captcha-align" >
-            <img [src]="imgCaptcha" class="imgCaptcha" />
-            <img src="assets/refresh.svg"  class="send-captcha imgRefresh" (click)="generateCaptcha()">
-        </div>
-        <div class="col-12 col-sm-6 col-md-6 captcha-align" >
-          <input type="text" formControlName="textCaptcha" class="form-control"
-          [ngClass]="{ 'is-invalid': submitted && form.textCaptcha.errors}" placeholder="Ingresa código"/>
-          <button class="send-captcha active " (click)="validateCaptcha()" type="button">
-            <img src="assets/send.svg">
+    <div class="row field">
+      <div class="col-10 col-sm-4  col-md-4">
+        <p class="description">Número de Celular</p>
+      </div>
+      <div class="col-12 col-sm-8 col-md-8">
+        <input class="input-text" placeholder="Ej. 315000000" type="text" formControlName="PhoneNumber">
+      </div>
+      <span class="error" *ngIf="form.PhoneNumber.errors != null && form.PhoneNumber.errors.maxlength">*Máximo 10
+        digitos.</span>
+      <span class="error" *ngIf="form.PhoneNumber.errors != null && form.PhoneNumber.errors.pattern">*Por favor Ingresa
+        Unicamente números.</span>
+      <span class="error" *ngIf="form.PhoneNumber.errors != null && form.PhoneNumber.errors.required && submitted">*Por
+        favor ingresa el número de celular.</span>
+    </div>
+
+    <div class="row field">
+      <div class="col-12 col-sm-6 col-md-6 captcha-align">
+        <img [src]="imgCaptcha" class="imgCaptcha" />
+        <img src="assets/refresh.svg" class="send-captcha imgRefresh" (click)="generateCaptcha()">
+      </div>
+      <div class="col-12 col-sm-6 col-md-6 captcha-align">
+        <input type="text" formControlName="textCaptcha" class="form-control"
+          [ngClass]="{ 'is-invalid': submitted && form.textCaptcha.errors}" placeholder="Ingresa código" />
+        <button class="send-captcha active " (click)="validateCaptcha()" type="button">
+          <img src="assets/send.svg">
         </button>
-        </div>
-        <div class="col-12 col-sm-6 col-md-6 align" ></div>
-        <div class="col-12 col-sm-6 col-md-6 align" >
-          <span class="error" *ngIf="form.textCaptcha.errors && submittedCaptcha">*Ingresa el código.</span>
-        </div>
-        
-        </div>
-
-         <div class="row field">
-      <div class="col-12">
-          <button class="btn continue" (click)="validate(openInfo)" [disabled]="!captchaValid"
-              type="button">INGRESA</button>
       </div>
-  </div>
+      <div class="col-12 col-sm-6 col-md-6 align"></div>
+      <div class="col-12 col-sm-6 col-md-6 align">
+        <span class="error" *ngIf="form.textCaptcha.errors && submittedCaptcha">*Ingresa el código.</span>
+      </div>
+
+    </div>
+
+    <div class="row field">
+      <div class="col-12">
+        <button class="btn continue" (click)="validate(openInfo, openToken)" [disabled]="!captchaValid"
+          type="button">INGRESA</button>
+      </div>
+    </div>
   </div>
 </form>
 
-<ng-template #openInfo >
+<ng-template #openInfo>
   <app-modal-informative id="modalInformative" [message]="message">
   </app-modal-informative>
+</ng-template>
+
+<ng-template #openToken>
+  <app-modal-token [message]="message" [numero]="form.PhoneNumber.value" [timer]="Timer">
+  </app-modal-token>
 </ng-template>
