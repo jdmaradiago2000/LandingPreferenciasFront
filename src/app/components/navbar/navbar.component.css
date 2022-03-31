@@ -1,16 +1,19 @@
 .logo{
-    width: 7.5rem;
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
+    width: 3.5rem;
+    display: auto   ;
+    float: left;
 }
 
 .title{
     font-family: telefonicaSansDemiboldItalic !important;
+    font-size: calc(1em + 1vw);
     color: var(--movistar-blue);
     font-size: 1.8rem;
     margin-left: 1.25rem;
+    align-content: center;
+    text-align: center;
 }
+
 
 .alingCenter{
     margin: auto;
@@ -19,4 +22,15 @@
 
 .row{
     width: 100%;
+}
+
+.header{
+    height: 55px;
+    box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.16);
+    padding-top: 5px;
+    padding-left: 2px;
+    padding-right: 10px;
+    text-align: center;
+    font-size: calc(1em + 1vw);
+    overflow:hidden; /* Eliminamos errores de float */
 }

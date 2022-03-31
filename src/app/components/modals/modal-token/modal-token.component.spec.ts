@@ -22,4 +22,5 @@ describe('ModalTokenComponent', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
+  
 });

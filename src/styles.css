@@ -32,16 +32,22 @@
 	--grey-6: #999999	;
   }
 
-body {
-    max-width: 100%;
+  body{
     height: auto;
-    background: url('../src/assets/fondo_lp008.jpg');
+	background: url('../src/assets/fondo_lp008.jpg');
+    background-size:100% 125%;
     background-position: center center;
-    background-repeat: no-repeat;
     background-attachment: fixed;
-    background-size: cover;
+	background-repeat: no-repeat;
     margin:0;
-    position:relative;
+    
+	
+}
+
+@media (min-width: 768px) {
+  .bd-placeholder-img-lg {
+	font-size: 3.5rem;
+  }
 }
 
 .img-progress-bar {

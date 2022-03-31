@@ -24,6 +24,7 @@ export class ModalTokenComponent implements OnInit {
       'InToken': ["", Validators.required]
     });
   }
+  
 
   ngOnInit() {
     this.image = "ic_warning.png";
