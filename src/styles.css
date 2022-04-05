@@ -33,16 +33,17 @@
   }
 
   body{
-    height: auto;
+	overflow: hidden;
+    /*height: auto;
 	background: url('../src/assets/fondo_lp008.jpg');
-    background-size:100% 125%;
     background-position: center center;
     background-attachment: fixed;
 	background-repeat: no-repeat;
-    margin:0;
-    
-	
+    margin:auto;
+	display: flex;
+    flex-direction: column;*/
 }
+
 
 @media (min-width: 768px) {
   .bd-placeholder-img-lg {
@@ -81,3 +82,4 @@
     vertical-align: middle;
     border-radius: 1rem;
 }
+

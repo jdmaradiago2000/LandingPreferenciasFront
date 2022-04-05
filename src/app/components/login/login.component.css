@@ -86,6 +86,9 @@
     -khtml-opacity: 0.8;        /* Safari 1.x */
     opacity: 0.8;               /* Good browsers */
 
+    float:auto;
+    position:fixed;
+    display: block;
     
   }
   
