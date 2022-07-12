@@ -1,4 +1,6 @@
 import { MatFormFieldModule, MatInputModule } from '@angular/material';
+import {MatRadioModule} from '@angular/material/radio';
+import {MatStepperModule} from '@angular/material/stepper';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
@@ -15,6 +17,7 @@ import { LoaderComponent } from './components/loader/loader.component';
 import { ContentComponent } from './components/content/content.component';
 import { ModalInformativeComponent } from './components/modals/modal-informative/modal-informative.component';
 import { ModalTokenComponent } from './components/modals/modal-token/modal-token.component';
+import { LandingMovistarComponent } from './components/landing-movistar/landing-movistar.component';
 
 
 @NgModule({
@@ -26,7 +29,8 @@ import { ModalTokenComponent } from './components/modals/modal-token/modal-token
     LoaderComponent,
     ContentComponent,
     ModalInformativeComponent,
-    ModalTokenComponent  
+    ModalTokenComponent,
+    LandingMovistarComponent
   ],
   imports: [
     BrowserModule,
@@ -36,7 +40,9 @@ import { ModalTokenComponent } from './components/modals/modal-token/modal-token
     ReactiveFormsModule,
     MatFormFieldModule,
     MatInputModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    MatRadioModule,
+    MatStepperModule
   ],
   exports: [
     MatFormFieldModule,
