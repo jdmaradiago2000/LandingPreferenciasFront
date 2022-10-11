@@ -1,19 +1,36 @@
-.background {
-    width: 100%;
-    height: 6.5%;
-    background-position: center;
+.footer{
+    height:10vh;
+    width:100%;
+}
+    
+.container{
+    position:static;
+    background: url(/assets/piedepagina.JPG);
     background-repeat: no-repeat;
-    background-size:auto auto;
-    position:absolute;
-   }
-
-.fix{
-    right: 0;
-    max-width: 100px;
-    width: 100%;
-    margin: 0.625rem;
-    position: fixed;
-    bottom: 0;
+    background-size:100% 100%;
+    height:100%;
+    text-align: -webkit-right;
 }
 
+.buttons{
+    width: 25%;
+    height:100%;
+    display: flex;
+    justify-content:flex-end;
+    align-items: center;
+    gap: 40px;
+}
 
+.btn-outline-primary{
+    border-radius: 2.5rem;
+    border: none;
+    background-color: rgb(91, 197, 0);
+    font-weight: bold;
+    color: white;
+}
+
+.bot{
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: cover;
+}

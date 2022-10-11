@@ -1,6 +1,6 @@
 .logo{
     width: 3.5rem;
-    display: auto   ;
+    display: auto;
     float: left;
 }
 
@@ -18,7 +18,6 @@
 .title{
     font-size: 0.8em;
 }
-
 }
 
 
@@ -32,29 +31,21 @@
 }
 
 .header{
-    height: 55px;
-    box-shadow: 0 2px 2px 0 rgba(22, 21, 21, 0.16);
-    padding-top: 5px;
-    padding-left: 2px;
-    padding-right: 10px;
+    height: 10vh;
     text-align: center;
     font-size: calc(1em + 1vw);
     overflow:hidden; /* Eliminamos errores de float */
-    display: block;
+    display: flex;
+    align-items: center;
+}
+
+.image-container{
+    height: 35vh;
 }
 
 .ImagenFondo{
     width: 100%;
     height: 100%;
-    margin: 0.2% 0% 0% 0%;
-    background: url(/assets/fondo_lp008.jpg);
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    font-size: calc(2em + 1vw);
-    float: auto;
-    position: absolute;
+    object-fit: cover;
 }
-
-
 
