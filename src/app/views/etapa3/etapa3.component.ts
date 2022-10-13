@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { QuestionsService } from 'src/app/services/questions/questions.service';
 
 @Component({
   selector: 'app-etapa3',
@@ -6,10 +7,15 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./etapa3.component.css']
 })
 export class Etapa3Component implements OnInit {
-
-  constructor() { }
-
-  ngOnInit() {
+  title = 'LandingPreferencias';
+  questionList: any = [];
+  constructor(private questionsService: QuestionsService){
+    console.log("El componente se ha creado");
   }
 
+  ngOnInit(): void {
+    console.log("El componente se ha inicializado");
+    this.questionsService.getQuestions3()
+      .subscribe(response => this.questionList = response);
+  }
 }

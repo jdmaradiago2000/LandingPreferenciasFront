@@ -1,5 +1,4 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
-
 import { Etapa2Component } from './etapa2.component';
 
 describe('Etapa2Component', () => {
