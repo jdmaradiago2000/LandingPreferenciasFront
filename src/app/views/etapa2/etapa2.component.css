@@ -16,12 +16,11 @@
 }
 
 .questions-container{
-  height: 35vh;
+  min-height: calc(100vh - 10vh - 35vh - 10vh - 10vh);
   width: 100%;
 }
 
 .questions-box{
-  margin: 1%;
   width: 100%;
   padding: 0% 3%;
 }
@@ -56,5 +55,5 @@
 }
 
 .espacio{
-  height: 10vh;
+  height: 3vh;
 }
