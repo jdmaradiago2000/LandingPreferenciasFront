@@ -16,7 +16,7 @@
 }
 
 .questions-container{
-  height: 35vh;
+  min-height: calc(100vh - 10vh - 35vh - 10vh - 10vh);
   width: 100%;
 }
 

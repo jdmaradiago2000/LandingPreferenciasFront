@@ -1,0 +1,11 @@
+<div class="questions-container">
+  <section class="etapas-container">
+    <img class="etapas" src="../assets/Etapas.PNG" alt="">
+  </section>
+  <app-first-question [question]="firstQuestion"  *ngIf="formIndex === 0"></app-first-question>
+  <app-second-question [question]="secondQuestion" *ngIf="formIndex === 1"></app-second-question>
+  <div class="button">
+    <button *ngIf="formIndex !== 0" (click)="previousStep()" type="button" class="btn btn-primary">Atrás</button>
+    <button (click)="nextStep()" type="button" class="btn btn-primary">Siguiente</button>
+  </div>
+</div>

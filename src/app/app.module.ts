@@ -26,6 +26,9 @@ import { Etapa1Component } from './views/etapa1/etapa1.component';
 import { Etapa2Component } from './views/etapa2/etapa2.component';
 import { Etapa3Component } from './views/etapa3/etapa3.component';
 import { OkComponent } from './views/ok/ok.component';
+import { ContainerSurveyComponent } from './components/container-survey/container-survey.component';
+import { FirstQuestionComponent } from './components/first-question/first-question.component';
+import { SecondQuestionComponent } from './components/second-question/second-question.component';
 
 @NgModule({
   declarations: [
@@ -45,6 +48,9 @@ import { OkComponent } from './views/ok/ok.component';
     Etapa2Component,
     Etapa3Component,
     OkComponent,
+    ContainerSurveyComponent,
+    FirstQuestionComponent,
+    SecondQuestionComponent,
   ],
   imports: [
     BrowserModule,

@@ -1,21 +1,20 @@
 .footer{
-    
     bottom: 0%;
     height:10vh;
     width:100%;
 }
     
-.container{
+/* .container{
     position:static;
     background: url(/assets/piedepagina.JPG);
     background-repeat: no-repeat;
-    background-size:100% 100%;
+    background-size: auto;
     height:100%;
     text-align: -webkit-right;
-}
+} */
 
 .buttons{
-    width: 25%;
+    /* width: 25%; */
     height:100%;
     display: flex;
     justify-content:flex-end;
