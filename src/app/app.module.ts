@@ -22,13 +22,16 @@ import { app_routing } from './app.routes';
 import { Header1Component } from './components/header1/header1.component';
 import { Header2Component } from './components/header2/header2.component';
 import { Header3Component } from './components/header3/header3.component';
-import { Etapa1Component } from './views/etapa1/etapa1.component';
-import { Etapa2Component } from './views/etapa2/etapa2.component';
-import { Etapa3Component } from './views/etapa3/etapa3.component';
-import { OkComponent } from './views/ok/ok.component';
+import { SurveyComponent } from './views/survey.component';
 import { ContainerSurveyComponent } from './components/container-survey/container-survey.component';
 import { FirstQuestionComponent } from './components/first-question/first-question.component';
 import { SecondQuestionComponent } from './components/second-question/second-question.component';
+import { ThirdQuestionComponent } from './components/third-question/third-question.component';
+import { CompletedQuestionsComponent } from './components/completed-questions/completed-questions.component';
+import { HeaderSurveyComponent } from './components/header-survey/header-survey.component';
+import { Etapa1Component } from './components/etapas/etapa1/etapa1.component';
+import { Etapa2Component } from './components/etapas/etapa2/etapa2.component';
+import { Etapa3Component } from './components/etapas/etapa3/etapa3.component';
 
 @NgModule({
   declarations: [
@@ -44,13 +47,16 @@ import { SecondQuestionComponent } from './components/second-question/second-que
     Header1Component,
     Header2Component,
     Header3Component,
-    Etapa1Component,
-    Etapa2Component,
-    Etapa3Component,
-    OkComponent,
+    SurveyComponent,
     ContainerSurveyComponent,
     FirstQuestionComponent,
     SecondQuestionComponent,
+    ThirdQuestionComponent,
+    CompletedQuestionsComponent,
+    HeaderSurveyComponent,
+    Etapa1Component,
+    Etapa2Component,
+    Etapa3Component,
   ],
   imports: [
     BrowserModule,

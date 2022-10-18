@@ -1,33 +1,8 @@
-.logo{
-    width: 3.5rem;
-    display: auto;
-    float: left;
-}
-
-.title{
-    font-family: telefonicaSans !important;
-    font-size: calc(1em + 1vw);
-    color: var(--movistar-blue);
-    font-size: 1.8rem;
-    margin-left: 1.25rem;
-    align-content: center;
-    text-align: center;
-}
-
-@media (max-width: 570px) {
-.title{
-    font-size: 0.8em;
-}
-}
-
-
-.alingCenter{
-    margin: auto;
-    vertical-align: middle;
-}
-
-.row{
-    width: 100%;
+@font-face {
+    font-family: 'telefonica-sans-regular';
+    src: url('/assets/fonts-web/telefonica-sans-regular.ttf') format('truetype');
+    font-style: normal;
+    font-weight: normal;
 }
 
 .header{
@@ -39,6 +14,32 @@
     align-items: center;
 }
 
+.col-2{
+    height: 100%;
+}
+
+.logo{
+    height: 100%;
+    float: left;
+}
+
+.imagen-logo{
+    height: 90%;
+}
+
+.title{
+    font-family: telefonica-sans !important;
+    font-size: calc(1em + 1vw);
+    color: #019DF4;
+    text-align: center;
+}
+
+@media (max-width: 570px) {
+.title{
+    font-size: 0.8em;
+}
+}
+
 .image-container{
     height: 35vh;
 }
@@ -48,4 +49,3 @@
     height: 100%;
     object-fit: cover;
 }
-

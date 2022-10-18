@@ -1,11 +1,17 @@
 <div class="questions-container">
-  <section class="etapas-container">
-    <img class="etapas" src="../assets/Etapas.PNG" alt="">
-  </section>
-  <app-first-question [question]="firstQuestion"  *ngIf="formIndex === 0"></app-first-question>
-  <app-second-question [question]="secondQuestion" *ngIf="formIndex === 1"></app-second-question>
+  <app-etapa1 *ngIf="formIndex === 1"></app-etapa1>
+  <app-etapa2 *ngIf="formIndex === 2"></app-etapa2>
+  <app-etapa3 *ngIf="formIndex === 3"></app-etapa3>
+
+  <app-first-question [question]="firstQuestion"  *ngIf="formIndex === 1"></app-first-question>
+  <app-second-question [question]="secondQuestion" *ngIf="formIndex === 2"></app-second-question>
+  <app-third-question [question]="thirdQuestion" *ngIf="formIndex === 3"></app-third-question>
+  <app-completed-questions [question]="completedQuestions" *ngIf="formIndex === 4"></app-completed-questions>
+
   <div class="button">
-    <button *ngIf="formIndex !== 0" (click)="previousStep()" type="button" class="btn btn-primary">Atrás</button>
-    <button (click)="nextStep()" type="button" class="btn btn-primary">Siguiente</button>
+    <button *ngIf="formIndex>=2 && formIndex<=3" (click)="previousStep()" type="button" class="btn btn-primary">Anterior</button>
+    <button *ngIf="formIndex>=1 && formIndex<3" (click)="nextStep()" type="button" class="btn btn-primary">Siguiente</button>
+    <button *ngIf="formIndex===3" (click)="nextStep()" type="button" class="btn btn-primary">Terminar</button>
   </div>
+  <div class="espacio"></div>
 </div>

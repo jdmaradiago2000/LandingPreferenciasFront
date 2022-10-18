@@ -2,11 +2,11 @@ import { Component, OnInit } from '@angular/core';
 import { QuestionsService } from 'src/app/services/questions/questions.service';
 
 @Component({
-  selector: 'app-etapa2',
-  templateUrl: './etapa2.component.html',
-  styleUrls: ['./etapa2.component.css']
+  selector: 'app-survey',
+  templateUrl: './survey.component.html',
+  styleUrls: ['./survey.component.css']
 })
-export class Etapa2Component implements OnInit {
+export class SurveyComponent implements OnInit {
   title = 'LandingPreferencias';
   questionList: any = [];
   constructor(private questionsService: QuestionsService){
@@ -15,7 +15,7 @@ export class Etapa2Component implements OnInit {
 
   ngOnInit(): void {
     console.log("El componente se ha inicializado");
-    this.questionsService.getQuestions2()
+    this.questionsService.getQuestions1()
       .subscribe(response => this.questionList = response);
   }
 }
