@@ -1,0 +1,63 @@
+.etapas-container{
+  height: 8.5vh;
+  margin: 0.5vh 0vh 1vh 0vh;
+  border-radius: 7px;
+  width: 100%;
+  background-color: #019DF4;
+  display: flex;
+  align-items: center;
+}
+
+.etapas{
+  max-width: 100%;
+  max-height: 100%;
+  padding: 0% 2%;
+  object-fit: cover;
+}
+
+/* 
+.etapa{
+  color: white;
+  width: 20vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: red;
+}
+
+.barra-etapas{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 60vh;
+  background-color: green;
+}
+
+.numero-etapa{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  width: 7%;
+  background-color: grey;
+}
+
+.numero-etapa::after{
+  content: "";
+  display: block;
+  padding-bottom: 100%;
+}
+
+.mas-cerca{
+  width: 30vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: blueviolet;
+}
+
+.blanco{
+  width: 85vh;
+  background-color: yellow;  
+}
+*/

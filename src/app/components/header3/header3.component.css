@@ -1,11 +1,11 @@
 .logo{
-    width: 3.5rem;
+    width: 4.0rem;
     display: auto;
     float: left;
 }
 
 .title{
-    font-family: telefonicaSans !important;
+    font-family: telefonica-sans !important;
     font-size: calc(1em + 1vw);
     color: var(--movistar-blue);
     font-size: 1.8rem;
@@ -48,4 +48,3 @@
     height: 100%;
     object-fit: cover;
 }
-
