@@ -12,7 +12,6 @@
     font-weight: normal;
 }
 
-
 .etapas-container{
     height: 10vh;
     border-radius: 7px;
@@ -22,11 +21,11 @@
     align-items: center;
 }
 
-.espacio1{
+/* .espacio1{
     height: 100%;
     width: 2%;
     background-color: #019DF4;
-}
+} */
 
 .word-etapa{
     font-family: telefonica-sans-regular;
@@ -35,6 +34,7 @@
     background-color: #019DF4;
     height: 100%;
     width: 10%;
+    padding: 0% 2.5%;
     display: flex;
     justify-content: flex-start;
     align-items: center;
@@ -103,7 +103,7 @@
 }
 
 .espacio2{
-    width: 34%;
+    width: 36%;
     height: 100%;
     background-color: #019DF4;
 }
