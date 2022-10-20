@@ -19,19 +19,24 @@ import { ModalInformativeComponent } from './components/modals/modal-informative
 import { ModalTokenComponent } from './components/modals/modal-token/modal-token.component';
 import { LandingMovistarComponent } from './components/landing-movistar/landing-movistar.component';
 import { app_routing } from './app.routes';
-import { Header1Component } from './components/header1/header1.component';
-import { Header2Component } from './components/header2/header2.component';
-import { Header3Component } from './components/header3/header3.component';
+import { Header1Component } from './components/headers/header1/header1.component';
+import { Header2Component } from './components/headers/header2/header2.component';
+import { Header3Component } from './components/headers/header3/header3.component';
 import { SurveyComponent } from './views/survey.component';
-import { ContainerSurveyComponent } from './components/container-survey/container-survey.component';
-import { FirstQuestionComponent } from './components/first-question/first-question.component';
-import { SecondQuestionComponent } from './components/second-question/second-question.component';
-import { ThirdQuestionComponent } from './components/third-question/third-question.component';
-import { CompletedQuestionsComponent } from './components/completed-questions/completed-questions.component';
-import { HeaderSurveyComponent } from './components/header-survey/header-survey.component';
-import { Etapa1Component } from './components/etapas/etapa1/etapa1.component';
-import { Etapa2Component } from './components/etapas/etapa2/etapa2.component';
-import { Etapa3Component } from './components/etapas/etapa3/etapa3.component';
+import { ContainerSurveyComponent } from './components/survey/container-survey/container-survey.component';
+import { FirstQuestionComponent } from './components/survey/first-question/first-question.component';
+import { SecondQuestionComponent } from './components/survey/second-question/second-question.component';
+import { ThirdQuestionComponent } from './components/survey/third-question/third-question.component';
+import { CompletedQuestionsComponent } from './components/survey/completed-questions/completed-questions.component';
+import { HeaderSurveyComponent } from './components/headers/header-survey/header-survey.component';
+import { Etapa1Component } from './components/stages/etapa1/etapa1.component';
+import { Etapa2Component } from './components/stages/etapa2/etapa2.component';
+import { Etapa3Component } from './components/stages/etapa3/etapa3.component';
+import { HeaderImage1Component } from './components/header-images/header-image1/header-image1.component';
+import { HeaderImage2Component } from './components/header-images/header-image2/header-image2.component';
+import { HeaderImage3Component } from './components/header-images/header-image3/header-image3.component';
+import { StageContainerComponent } from './components/stages/stage-container/stage-container.component';
+import { HeaderImagesContainerComponent } from './components/header-images/header-images-container/header-images-container.component';
 
 @NgModule({
   declarations: [
@@ -57,6 +62,11 @@ import { Etapa3Component } from './components/etapas/etapa3/etapa3.component';
     Etapa1Component,
     Etapa2Component,
     Etapa3Component,
+    HeaderImage1Component,
+    HeaderImage2Component,
+    HeaderImage3Component,
+    StageContainerComponent,
+    HeaderImagesContainerComponent,
   ],
   imports: [
     BrowserModule,

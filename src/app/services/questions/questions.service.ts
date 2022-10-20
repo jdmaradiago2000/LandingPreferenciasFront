@@ -7,7 +7,7 @@ import { HttpClient } from '@angular/common/http';
 export class QuestionsService {
 
   constructor(private http: HttpClient) {
-    console.log("Servicio HTTP:");
+
   }
 
   getQuestions1(): any{

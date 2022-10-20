@@ -1,0 +1,41 @@
+@font-face {
+    font-family: 'telefonica-sans-regular';
+    src: url('/assets/fonts-web/telefonica-sans-regular.ttf') format('truetype');
+    font-style: normal;
+    font-weight: normal;
+}
+
+.header{
+    height: 10vh;
+    text-align: center;
+    font-size: calc(1em + 1vw);
+    overflow:hidden; /* Eliminamos errores de float */
+    display: flex;
+    align-items: center;
+}
+
+.col-2{
+    height: 100%;
+}
+
+.logo{
+    height: 100%;
+    float: left;
+}
+
+.imagen-logo{
+    height: 90%;
+}
+
+.title{
+    font-family: telefonica-sans !important;
+    font-size: calc(1em + 1vw);
+    color: #019DF4;
+    text-align: center;
+}
+
+@media (max-width: 570px) {
+.title{
+    font-size: 0.8em;
+}
+}

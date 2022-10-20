@@ -1,0 +1,108 @@
+@font-face {
+    font-family: 'Guthen-Bloots';
+    src: url('/assets/fonts-web/Guthen-Bloots.ttf') format('truetype');
+    font-style: normal;
+    font-weight: normal;
+}
+
+@font-face {
+    font-family: 'telefonica-sans-regular';
+    src: url('/assets/fonts-web/telefonica-sans-regular.ttf') format('truetype');
+    font-style: normal;
+    font-weight: normal;
+}
+
+.etapas-container{
+    height: 10vh;
+    border-radius: 7px;
+    width: 100%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.espacio1{
+    height: 100%;
+    width: 2%;
+    background-color: #019DF4;
+}
+
+.word-etapa{
+    font-family: telefonica-sans-regular;
+    font-size: calc(0.8em + 0.8vw);
+    color: #FFFFFF;
+    background-color: #019DF4;
+    height: 100%;
+    width: 10%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.etapas-form {
+    height: 100%;
+    width: 22%;
+    background-color: #019DF4;
+    z-index: -2;
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.progress {
+  position: absolute;
+  height: 1px;
+  width: 100%;
+  background-color: #FFFFFF;
+  z-index: -1;
+}
+
+.progress-step1 {
+    font-family: telefonica-sans-regular;
+    font-size: calc(0.8em + 0.8vw);
+    width: 2.4875rem;
+    height: 2.4875rem;
+    max-width: 2.8875rem;
+    max-height: 90%;
+    color: #FFFFFF;
+    background-color: #B0B6CA;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.progress-step {
+    font-family: telefonica-sans-regular;
+    font-size: calc(0.8em + 0.8vw);
+    width: 2.4875rem;
+    height: 2.4875rem;
+    max-width: 2.4875rem;
+    max-height: 90%;  
+    color: #D1D5E4;
+    background-color: #FFFFFF;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.Phrase{
+    font-family: Guthen-Bloots;
+    font-size: calc(1em + 1vw);
+    letter-spacing: 0.1em;
+    color: #FFFFFF;
+    height: 100%;
+    width: 32%;
+    background-color: #019DF4;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.espacio2{
+    width: 34%;
+    height: 100%;
+    background-color: #019DF4;
+}
