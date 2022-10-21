@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormIndexService } from 'src/app/services/form-index.service';
 import { QuestionsService } from 'src/app/services/questions/questions.service';
 
+
 @Component({
   selector: 'app-container-survey',
   templateUrl: './container-survey.component.html',
@@ -30,12 +31,18 @@ export class ContainerSurveyComponent implements OnInit {
   }
 
   nextStep() {
-    this.formIndex = this.formIndex + 1
+    this.questionsService.getQuestionsNext()
+      .subscribe(response => this.firstQuestion = response);
+    this.formIndex = this.firstQuestion[0].etapa;
+    console.log('Variable: ');
     this.formIndexService.disparadorFormIndex.emit(this.formIndex)
   }
 
   previousStep() {
-    this.formIndex = this.formIndex - 1
+    this.questionsService.getQuestionsPrevious()
+      .subscribe(response => this.firstQuestion = response);
+
+    
     this.formIndexService.disparadorFormIndex.emit(this.formIndex)
   }
   

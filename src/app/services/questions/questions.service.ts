@@ -10,6 +10,14 @@ export class QuestionsService {
 
   }
 
+  getQuestionsPrevious(): any{
+    return this.http.get("https://localhost:44366/Question/getQuestion/1");
+  }
+
+  getQuestionsNext(): any{
+    return this.http.get("https://localhost:44366/Question/getQuestion/1");
+  }
+
   getQuestions1(): any{
     return this.http.get("https://localhost:44366/Question/getQuestion/1");
   }

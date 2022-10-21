@@ -1,5 +1,5 @@
 <br>
-<app-loader></app-loader>
+<app-loader ></app-loader>
 <form [formGroup]="formLogin">
   <div class="col-12 col-sm-10 col-md-12  form-login">
     <div class="row field">
@@ -21,7 +21,7 @@
         <p class="description">Número de Documento</p>
       </div>
       <div class="col-12 col-sm-8 col-md-8">
-        <input class="input-text" placeholder="" type="text" formControlName="IdentificationDocument">
+        <input class="input-text" placeholder="Ej. 1068000000" type="text" formControlName="IdentificationDocument">
       </div>
       <span class="error" *ngIf="form.IdentificationDocument.errors && submitted">*Por favor ingresa el número de
         Documento.</span>
@@ -70,12 +70,14 @@
   </div>
 </form>
 
-<ng-template #openInfo>
-  <app-modal-informative id="modalInformative" [message]="message">
+
+<ng-template #openInfo >
+  <app-modal-informative id="modalInformative" [message]="message" (ItemEvent)="procesaPropagar($event)">
   </app-modal-informative>
 </ng-template>
 
+
 <ng-template #openToken>
-  <app-modal-token [message]="message" [numero]="form.PhoneNumber.value" [timer]="Timer">
+  <app-modal-token [message]="message" [numero]="form.PhoneNumber.value" [timer]="Timer" [cedula]="form.IdentificationDocument.value" (ItemEvent)="procesaPropagar($event)">
   </app-modal-token>
 </ng-template>

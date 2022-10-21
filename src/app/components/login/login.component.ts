@@ -1,9 +1,12 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit ,Input, Output,EventEmitter,ViewChild} from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { DomSanitizer } from '@angular/platform-browser';
 import { LoaderService } from 'src/app/services/loader.service';
 import { LoginService } from 'src/app/services/login.service';
+import {TokenService} from 'src/app/services/token.service';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
+import {ModalTokenComponent} from 'src/app/components/modals/modal-token/modal-token.component';
+
 
 @Component({
   selector: 'app-login',
@@ -16,25 +19,36 @@ export class LoginComponent implements OnInit {
   public captchaValid: boolean = false;
   public message: string = '';
   public Timer: NodeJS.Timer;
+  public fechaDesactivacion : Date;
+  booled : boolean = false;
+  
   documentTypeList: any = [{ 'id': 1, 'name': 'Cédula de Ciudadania' }, { 'id': 2, 'name': 'Cédula de Extranjería' },
   { 'id': 3, 'name': 'Pasaporte' }, { 'id': 4, 'name': 'Tarjeta de Identidad' }]
   submitted = false;
   submittedCaptcha = false;
 
+
   constructor(private loginService: LoginService,
     private _sanitizer: DomSanitizer,
     private loaderService: LoaderService,
-    private modalConfirm: NgbModal,) { }
+    private modalConfirm: NgbModal,
+    private tokenService : TokenService,
+    ) { }
 
   ngOnInit() {
+    
     this.formLogin = new FormGroup({
-      PhoneNumber: new FormControl('2501091036', [Validators.required, Validators.minLength(10), Validators.maxLength(10), Validators.pattern(/^-?(0|[1-9]\d*)?$/)]),
-      IdentificationDocument: new FormControl('901316906', [Validators.required, Validators.minLength(4), Validators.maxLength(10), Validators.pattern(/^-?(0|[1-9]\d*)?$/)]),
+      //PhoneNumber: new FormControl('', [Validators.required, Validators.minLength(10), Validators.maxLength(10), Validators.pattern(/^-?(0|[1-9]\d*)?$/)]),
+      PhoneNumber: new FormControl('3185310413', [Validators.required, Validators.minLength(10), Validators.maxLength(10), Validators.pattern(/^-?(0|[1-9]\d*)?$/)]),
+      //IdentificationDocument: new FormControl('', [Validators.required, Validators.minLength(4), Validators.maxLength(10), Validators.pattern(/^-?(0|[1-9]\d*)?$/)]),
+      IdentificationDocument: new FormControl('1068930535', [Validators.required, Validators.minLength(4), Validators.maxLength(10), Validators.pattern(/^-?(0|[1-9]\d*)?$/)]),
       DocumentType: new FormControl('1', [Validators.required]),
+
       textCaptcha: new FormControl('', [Validators.required]),
     });
 
-    this.getCaptcha();
+    this.getCaptcha();    
+
   }
 
   // convenience getter for easy access to form fields
@@ -80,13 +94,17 @@ export class LoginComponent implements OnInit {
         });
   }
 
+
+  //entra aca 
+
   validate(openInfo: any, openToken: any) {
+    
     this.submitted = true;
     if (this.formLogin.invalid) {
       this.message = 'Faltan campos por diligenciar, por favor revisa.';
-      this.modalConfirm.open(openInfo, { centered: true });
-    }
-    else {
+      
+      this.modalConfirm.open(openInfo, { centered: true } );
+    }else {
       this.validateData(openInfo, openToken);
     }
   }
@@ -112,15 +130,30 @@ export class LoginComponent implements OnInit {
   }
 
   private ValidacionInicial(openInfo: any, openToken: any, userInfo: any): void {
+    
     this.loginService.ValidateUserInfo(userInfo)
       .subscribe(
         result => {
           this.loaderService.hide();
           this.message = result["msg"].toString();
-          this.Timer = setTimeout(() => {
-            this.MensajeTiempoInicialVencido(openInfo, openToken, userInfo);
-          }, 60000);
-          this.modalConfirm.open(openToken, { centered: true });
+          
+          if(this.message.includes("número máximo de intentos")){
+            this.modalConfirm.open(openInfo,{centered : true});
+            
+          }if(this.message.includes("token")){
+            this.message = "Hemos enviado un código de seguridad a tu linea móvil, por favor ingresa el código aquí:"
+            // logica de token
+            var data :any = {
+                Destinatario : userInfo.MobilePhone
+            }
+            console.log("entra al envio del token");
+            this.generateFirstToken(data,openInfo);
+
+            this.modalConfirm.open(openToken, { keyboard : false, centered : true ,backdrop : 'static' });    
+
+          }else{
+            this.modalConfirm.open(openInfo, { centered: true });
+          }                              
         }, error => {
           this.loaderService.hide();
           this.message = "En este momento no es posible realizar la solicitud intentelo más tarde, Gracias!";
@@ -170,4 +203,24 @@ export class LoginComponent implements OnInit {
           this.modalConfirm.open(openInfo, { centered: true });
         });
   }
+
+
+  generateFirstToken(data: any, openInfo : any){
+    this.tokenService.generateFirstToken(data).subscribe(
+      result =>{
+        this.fechaDesactivacion = result ;
+      }, error =>{
+        this.message = "En este momento no es posible generar su token de seguridad";
+        this.modalConfirm.open(openInfo, { centered: true });
+      });
+
+  }
+
+
+  receiveMessage($event){
+    this.booled = $event;
+  }
+
+
+
 }
