@@ -1,7 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { FormArray, FormBuilder, FormControl, FormGroup } from "@angular/forms";
-import { NgForm } from '@angular/forms';
-import { ThirdQuestionComponent } from '../third-question/third-question.component';
 
 @Component({
   selector: 'app-first-question',
@@ -10,17 +8,24 @@ import { ThirdQuestionComponent } from '../third-question/third-question.compone
 })
 
 export class FirstQuestionComponent implements OnInit {
+  //myVar1 = false;
+  respuestaAbierta = '';
+  multipleRespuesta1 = true;
+  multipleRespuesta2 = false;
+  multipleRespuesta3 = false;
+  multipleRespuesta4 = false;
+  multipleRespuesta5 = false;
   @Input() question: any;
   @Input() questions: any;
-  respuesta1: string = '';
-  respuesta2: string = '';
-  respuesta3: string = '';
-  respuesta4: string = '';
-  respuesta5: string = '';
+  public respuesta1: string = '';
+  public respuesta2: string = '';
+  public respuesta3: string = '';
+  public respuesta4: string = '';
+  public respuesta5: string = '';
   form: FormGroup;
   constructor(public fb: FormBuilder) {
   }
-
+  
 
   ngOnInit() {
     console.log(this.question);
@@ -36,33 +41,42 @@ export class FirstQuestionComponent implements OnInit {
       case '5' : this.respuesta1 = 'FALSE'; this.respuesta2 = 'FALSE'; this.respuesta3 = 'FALSE'; this.respuesta4 = 'FALSE'; this.respuesta5 = 'TRUE'; break;
       default: this.respuesta1 = 'FALSE'; this.respuesta2 = 'FALSE'; this.respuesta3 = 'FALSE'; this.respuesta4 = 'FALSE'; this.respuesta5 = 'FALSE'; break;
     }
-    alert(this.respuesta1+'-'+this.respuesta2+'-'+this.respuesta3+'-'+this.respuesta4+'-'+this.respuesta5);
   }
 
-  evaluarMultiple(myValue) {  
+  evaluarMultiple() {  
+    this.respuesta1 = 'FALSE';
+    this.respuesta2 = 'FALSE';
+    this.respuesta3 = 'FALSE';
+    this.respuesta4 = 'FALSE';
+    this.respuesta5 = 'FALSE';
     
-    
-    // switch(myValue)
-    // {
-    //   case '1' : this.respuesta1 = 'TRUE'; this.respuesta2 = 'FALSE'; this.respuesta3 = 'FALSE'; this.respuesta4 = 'FALSE'; this.respuesta5 = 'FALSE'; break;
-    //   case '2' : this.respuesta1 = 'FALSE'; this.respuesta2 = 'TRUE'; this.respuesta3 = 'FALSE'; this.respuesta4 = 'FALSE'; this.respuesta5 = 'FALSE'; break;
-    //   case '3' : this.respuesta1 = 'FALSE'; this.respuesta2 = 'FALSE'; this.respuesta3 = 'TRUE'; this.respuesta4 = 'FALSE'; this.respuesta5 = 'FALSE'; break;
-    //   case '4' : this.respuesta1 = 'FALSE'; this.respuesta2 = 'FALSE'; this.respuesta3 = 'FALSE'; this.respuesta4 = 'TRUE'; this.respuesta5 = 'FALSE'; break;
-    //   case '5' : this.respuesta1 = 'FALSE'; this.respuesta2 = 'FALSE'; this.respuesta3 = 'FALSE'; this.respuesta4 = 'FALSE'; this.respuesta5 = 'TRUE'; break;
-    //   default: this.respuesta1 = 'FALSE'; this.respuesta2 = 'FALSE'; this.respuesta3 = 'FALSE'; this.respuesta4 = 'FALSE'; this.respuesta5 = 'FALSE'; break;
-    // }
-    // alert(this.respuesta1+'-'+this.respuesta2+'-'+this.respuesta3+'-'+this.respuesta4+'-'+this.respuesta5);
+    if(this.multipleRespuesta1==true)
+    {
+      this.respuesta1 = 'TRUE';
+    }
+    if(this.multipleRespuesta2==true)
+    {
+      this.respuesta2 = 'TRUE';
+    }
+    if(this.multipleRespuesta3==true)
+    {
+      this.respuesta3 = 'TRUE';
+    }
+    if(this.multipleRespuesta4==true)
+    {
+      this.respuesta4 = 'TRUE';
+    }
+    if(this.multipleRespuesta5==true)
+    {
+      this.respuesta5 = 'TRUE';
+    }
   }
 
-  onChange(name: string, isChecked: boolean) {
-
-    // const cartoons = (this.form.controls.name as FormArray);
-
-    // if (isChecked) {
-    //   cartoons.push(new FormControl(name));
-    // } else {
-    //   const index = cartoons.controls.findIndex(x => x.value === name);
-    //   cartoons.removeAt(index);
-    // }
+  evaluarAbierta() {
+    this.respuesta2 = 'FALSE';
+    this.respuesta3 = '';
+    this.respuesta4 = '';
+    this.respuesta5 = '';
+    this.respuesta1 = this.respuestaAbierta;
   }
 }

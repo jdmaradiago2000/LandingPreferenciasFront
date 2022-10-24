@@ -37,6 +37,7 @@ import { HeaderImage2Component } from './components/header-images/header-image2/
 import { HeaderImage3Component } from './components/header-images/header-image3/header-image3.component';
 import { StageContainerComponent } from './components/stages/stage-container/stage-container.component';
 import { HeaderImagesContainerComponent } from './components/header-images/header-images-container/header-images-container.component';
+import { AllQuestionsComponent } from './components/survey/all-questions/all-questions.component';
 
 @NgModule({
   declarations: [
@@ -67,6 +68,7 @@ import { HeaderImagesContainerComponent } from './components/header-images/heade
     HeaderImage3Component,
     StageContainerComponent,
     HeaderImagesContainerComponent,
+    AllQuestionsComponent,
   ],
   imports: [
     BrowserModule,

@@ -34,3 +34,9 @@ export const amountTryToken = prefix +'Tokens/cantidadIntentosToken';
 export const addBlock = prefix + 'Bloqueo/blockUser';
 
 export const logToken = prefix+ 'Tokens/logToken';
+
+// PREGUNTAS Y RESPUESTAS
+export const previousQuestion = prefix + 'Question/getQuestionPrevious/';
+
+// LOGS
+export const getLog = prefix + 'Question/getLog/';

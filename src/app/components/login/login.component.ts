@@ -6,6 +6,7 @@ import { LoginService } from 'src/app/services/login.service';
 import {TokenService} from 'src/app/services/token.service';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import {ModalTokenComponent} from 'src/app/components/modals/modal-token/modal-token.component';
+import { QuestionsService } from 'src/app/services/questions/questions.service';
 
 
 @Component({
@@ -28,7 +29,8 @@ export class LoginComponent implements OnInit {
   submittedCaptcha = false;
 
 
-  constructor(private loginService: LoginService,
+  constructor(private questionsService: QuestionsService, 
+    private loginService: LoginService,
     private _sanitizer: DomSanitizer,
     private loaderService: LoaderService,
     private modalConfirm: NgbModal,
@@ -141,6 +143,26 @@ export class LoginComponent implements OnInit {
             this.modalConfirm.open(openInfo,{centered : true});
             
           }if(this.message.includes("token")){
+            //AQUI SE AGREGA EL LOG PARA LAS INTERACCIONES
+            let datosLogs: any = {
+              ID: 0,
+              INTERACCION: 'ETAPA LOGIN',
+              CODIGO_CLIENTE: userInfo.cust_id, //CUST_ID
+              CODIGO_CUENTA: userInfo.acct_id, //ACCT_ID
+              NUMERO_SERVICIO: this.form.PhoneNumber.value, //NUYMERO TELEFONICO
+              FECHA_INICIO: new Date(),
+              FECHA_FIN: new Date()
+            };
+
+            this.questionsService.sendLog(datosLogs)
+            .subscribe(
+              next => {
+                
+              }, error => {
+                alert("En este momento no es posible realizar la solicitud intentelo más tarde, Gracias!");
+              });
+
+
             this.message = "Hemos enviado un código de seguridad a tu linea móvil, por favor ingresa el código aquí:"
             // logica de token
             var data :any = {
