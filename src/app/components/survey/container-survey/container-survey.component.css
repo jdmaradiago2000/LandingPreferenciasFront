@@ -1,0 +1,31 @@
+@font-face {
+  font-family: 'telefonica-sans-regular';
+  src: url('/assets/fonts-web/telefonica-sans-regular.ttf') format('truetype');
+  font-style: normal;
+  font-weight: normal;
+}
+
+.questions-container{
+  min-height: calc(100vh - 10vh - 35vh - 10vh - 10vh);
+  width: 100%;
+}
+
+.buttons{
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  width: 100%;
+  padding-top: 1vh;
+  padding-bottom: 2vh;
+}
+
+.btn-primary{
+  font-family: telefonica-sans-regular;
+  color: #FFFFFF;
+  border-radius: 2.5rem;
+  border: none;
+  background-color: #019DF4;
+  padding: 0.5rem 2.0rem;
+  margin: 0rem 2.0rem;
+  color: white;
+}

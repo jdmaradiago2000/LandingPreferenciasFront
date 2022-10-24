@@ -1,0 +1,14 @@
+<div class="questions-container">
+
+  <!-- <app-first-question [question]="firstQuestion"  *ngIf="formIndex === 1"></app-first-question>
+  <app-second-question [question]="secondQuestion" *ngIf="formIndex === 2"></app-second-question>
+  <app-third-question [question]="thirdQuestion" *ngIf="formIndex === 3"></app-third-question> -->
+  <app-all-questions [question]="nextQuestion" *ngIf="formIndex>=1 && formIndex<=3"></app-all-questions>
+  <app-completed-questions [question]="completedQuestions" *ngIf="formIndex === 4"></app-completed-questions>
+
+  <div class="buttons">
+    <button *ngIf="formIndex>=1 && formIndex<=3" (click)="previousStep()" type="button" class="btn btn-primary">Anterior</button>
+    <button *ngIf="formIndex>=1 && formIndex<=3" (click)="nextStep()" type="button" class="btn btn-primary">Siguiente</button>
+    <button *ngIf="formIndex===3" (click)="nextStep()" type="button" class="btn btn-primary">Terminar</button>
+  </div>
+</div>

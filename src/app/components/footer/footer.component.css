@@ -1,0 +1,57 @@
+@font-face {
+    font-family: 'telefonica-sans-regular';
+    src: url('/assets/fonts-web/telefonica-sans-regular.ttf') format('truetype');
+    font-style: normal;
+    font-weight: normal;
+}
+
+.footer{
+    bottom: 0%;
+    height: 10vh;
+    width: 100%;
+    position: static;
+    background: url(/assets/piedepagina.JPG);
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    display: flex;
+}
+
+.space{
+    height: 100%;
+    width: 45%;
+}
+
+.buttons{
+    height:100%;
+    width: 55%;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    position: relative;
+}
+
+.btn-outline-primary{
+    font-family: telefonica-sans-regular;
+    color: #FFFFFF;
+    border-radius: 2.5rem;
+    border: none;
+    background-color: #5CB615;
+    padding: 0.2rem 1.5rem;
+    width: 10em;
+    height: 2.1em;
+}
+
+.bot-container{
+    width: 71px;
+    height: 66px;
+    margin-left: 12%;
+    margin-right: 3%;
+}
+
+.bot{
+    width: 111px;
+    height: 106px;
+    position: absolute;
+    right: 1.0em;
+    bottom: 0.3em;
+}

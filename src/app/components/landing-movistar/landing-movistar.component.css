@@ -1,0 +1,219 @@
+/* WEB GENERAL */
+
+#Hoja{
+  height: 100vh;
+  padding: 0;
+  overflow: scroll;
+}
+
+/* ESTILOS DEL ENCABEZADO */
+
+#Header{
+  background: #ffffff;
+}
+
+.title{
+  color: #019DF4;
+  font-family: telefonicaSansHairlineItalic !important;
+  font-size: 1.8rem;
+  text-align: center;
+}
+
+.img-fluid-logo{
+  width: 5rem;
+  display: auto;
+  float: left;
+}
+
+/* CARRUSEL DE IMAGENES */
+
+#Carruselito{
+  position: relative;
+  top: -65px;
+  z-index: -1;
+  height: 400px;
+}
+
+/* Barra Etapas */
+
+ .stepper-inline{
+  display: inline-flex;
+}
+
+.stepper{
+  display: flex;
+  align-items: center;
+}
+
+.step{
+  display: flex;
+  background-color: #FFFFFF;
+  color: GREY;
+  width: 40px;
+  height: 40px;
+  align-items: center;
+  font-size: 13px;
+  justify-content: center;
+  border-radius: 50%;
+}
+
+.NameEtapa{
+  margin: 10px;
+  padding: 10px;
+}
+
+.linea{
+  width: 150px;
+  height: 1px;
+  background-color: #FFFFFF;
+}
+
+#etapa{
+  background-color: #019DF4;
+  align-items: center;
+  flex-direction: column;
+  font-family: telefonicaSansHairlineItalic !important;
+  gap: 10px;
+  border-radius: 10px;
+  color: #FFFFFF;
+}
+.step{
+  font-size: 20px;
+}
+
+#step1{
+  background-color: #B0B6CA;
+  color: Grey;
+}
+
+#step2{
+  background-color: #FFFFFF;
+  color: Grey;
+}
+
+#step3{
+  background-color: #FFFFFF;
+  color: Grey;
+}
+/* PREGUNTAS */
+
+.OneList{
+  display: show;
+  padding: 40px 0 0 40px;
+}
+
+#one{
+  list-style-type: none;
+  color: #000000;
+  font-family: telefonicaSans !important;
+
+}
+
+.TwoList{
+  display: none;
+  padding: 40px 0 0 40px;
+}
+
+#two{
+  list-style-type: none;
+  color: #000000;
+  font-family: telefonicaSans !important;
+}
+
+.ThreeList{
+  display: none;
+  padding: 40px 0 0 40px;
+}
+
+#three{
+  list-style-type: none;
+  color: #000000;
+  font-family: telefonicaSans !important;
+}
+
+.rowbtn{
+  display: flex;
+}
+
+#BtnBackRow{
+  padding-left: 20%;
+  text-align: right;
+}
+
+#BtnBack{
+  left: 100px;
+  position: relative;
+  border-radius: 20px;
+  width: 90px;
+  height: 37px;
+  display: none;
+  margin: auto;
+}
+
+#BtnNext{
+  right: 220px;
+  position: relative;
+  border-radius: 20px;
+  width: 90px;
+  height: 37px;
+  margin: auto;
+  display: block;
+}
+
+#BtnBack2{
+  left: 100px;
+  position: relative;
+  border-radius: 20px;
+  width: 90px;
+  height: 37px;
+  display: none;
+  margin: auto;
+}
+
+#BtnNext2{
+  right: 220px;
+  position: relative;
+  border-radius: 20px;
+  width: 90px;
+  height: 37px;
+  margin: auto;
+  display: none;
+}
+
+#BtnSend{
+  right: 220px;
+  position: relative;
+  border-radius: 20px;
+  width: 90px;
+  height: 37px;
+  display: none;
+  margin: auto;
+}
+
+/* Pie de pagina */
+
+#Footer{
+  display: flex;
+  justify-content: flex-end;
+  position: relative;
+  margin-top: 20px;
+}
+
+#Boton-Bot{
+  background-color: #5CB615;
+  background: #5CB615;
+  border-radius: 20px;
+  position: absolute;
+  width: 12%;
+  height: 59%;
+  margin: 1% 17% 0% 0%;
+}
+
+.img-fluid-Bot{
+  width: 7rem;
+  /* float: right; */
+  margin-right: 5%;
+  /* margin-bottom: 0%; */
+  position: relative;
+  margin-top: -6%;
+}

@@ -1,0 +1,98 @@
+:root {
+	--movistar-blue: #00a9e0	;
+	--movistar-blueDark: #0098d2	;
+	--movistar-blueLight-70: #4cc2e9	;
+	--movistar-blueLight-50: #7fd4ef	;
+	--movistar-blueLight-20: #b2e5f5	;
+	--movistar-green: #5bc500	;
+	--movistar-greenDark: #499e00	;
+	--movistar-greenLight-40: #ade27f	;
+	--movistar-greenLight-20: #cdedb2	;
+	--pepper: #ff374a	;
+	--pepper-dark: #d73241	;
+	--pepper-light: #ff6173	;
+	--purple: #954b97	;
+	--pink: #e9426d	;
+	--orange: #ec6839	;
+	--egg: #f59c00	;
+	--egg-light: #fce1b2	;
+	--movistar-cool-grey: #2a2a3c	;
+	--black: #000000	;
+	--movistar-gunmetal: #63666d	;
+	--cool-gray-10:#50535a	;
+	--grey-0: #3a3a3a	;
+	--grey-1: #666666	;
+	--grey-2: #757575	;
+	--grey-3: #b0b6ca	;
+	--grey-4: #eeeeee	;
+	--grey-5: #f6f6f6	;
+	--grey-shadow:#b6b7b7	;
+	--white: #ffffff	;
+	--grey-6: #999999	;
+  }
+
+@font-face {
+	font-family: playfairdisplayItalic;
+	src: url(playfairdisplay-italic.woff) format("woff"),
+		 url(playfairdisplay-italic.eot);
+}
+
+@font-face {
+  font-family: telefonicaSansBold;
+  src: url(telefonica-sans-bold.woff) format("woff"),
+  url(telefonica-sans-bold.eot);
+}
+
+@font-face {
+  font-family: telefonicaSansBoldOutline;
+  src: url(telefonica-sans-bold-outline.woff) format("woff"),
+      url(telefonica-sans-bold-outline.eot);
+}
+
+@font-face {
+  font-family: telefonicaSansBoldOutlineItalic;
+  src:  url(telefonica-sans-bold-outline-italic.woff) format("woff"),
+        url(telefonica-sans-bold-outline-italic.eot);
+}
+
+@font-face {
+  font-family: telefonicaSansDemibold;
+  src: url(telefonica-sans-demibold.woff) format("woff"),
+      url(telefonica-sans-demibold.eot);
+}
+
+@font-face {
+	font-family: telefonicaSansDemiboldItalic;
+	src: url(telefonica-sans-demibold-italic.woff) format("woff"),
+		url(telefonica-sans-demibold-italic.eot);
+  }
+
+  @font-face {
+	font-family: telefonicaSansHairline;
+	src: url(telefonica-sans-hairline.woff) format("woff"),
+		 url(telefonica-sans-hairline.eot);
+  }
+
+  @font-face {
+	font-family: telefonicaSansItalic;
+	src: url(telefonica-sans-italic.woff) format("woff"),
+		url(telefonica-sans-italic.eot);
+  }
+
+  @font-face {
+	font-family: telefonicaSansLight;
+	src: url(telefonica-sans-light.woff) format("woff"),
+		url(telefonica-sans-light.eot);
+  }
+
+  @font-face {
+	font-family: telefonicaSansRegular;
+	src: url(telefonica-sans-regular.woff) format("woff"),
+		url(telefonica-sans-regular.eot);
+  }
+
+  @font-face {
+	font-family: telefonicaSansThin;
+	src: url(telefonica-sans-thin.woff) format("woff"),
+		url(telefonica-sans-thin.eot);
+  }
