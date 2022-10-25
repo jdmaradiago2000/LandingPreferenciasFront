@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpHeaders, HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { LoadedRouterConfig } from '@angular/router/src/config';
-import { previousQuestion, getLog } from '../url';
+import { previousQuestion, getLog, nextQuestionUpdated } from '../url';
 
 @Injectable({
   providedIn: 'root'
@@ -40,14 +40,19 @@ export class QuestionsService {
     return this.http.get(previousQuestion + data, this.getHttpOptions()).pipe();
   }
 
+  getQuestionsNextUpdated(data: any): any{
+    return this.http.get(nextQuestionUpdated + data, this.getHttpOptions()).pipe();
+  }
+
+  /*
   getQuestionsNext(): any{
     return this.http.get("https://localhost:44366/Question/getQuestion/1", this.getHttpOptions()).pipe();
-  }
+  }*/
 
   getQuestions1(): any{
     return this.http.get("https://localhost:44366/Question/getQuestion/1");
   }
-
+ /*
   getQuestions2(): any{
     return this.http.get("https://localhost:44366/Question/getQuestion/2");
   }
@@ -55,6 +60,7 @@ export class QuestionsService {
   getQuestions3(): any{
     return this.http.get("https://localhost:44366/Question/getQuestion/3");
   } 
+  */
   
   getLog(data: any): any{
     return this.http.get(getLog + data, this.getHttpOptions()).pipe();
