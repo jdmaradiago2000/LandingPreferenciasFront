@@ -143,24 +143,31 @@ export class LoginComponent implements OnInit {
             this.modalConfirm.open(openInfo,{centered : true});
             
           }if(this.message.includes("token")){
-            //AQUI SE AGREGA EL LOG PARA LAS INTERACCIONES
-            let datosLogs: any = {
-              ID: 0,
-              INTERACCION: 'ETAPA LOGIN',
-              CODIGO_CLIENTE: userInfo.cust_id, //CUST_ID
-              CODIGO_CUENTA: userInfo.acct_id, //ACCT_ID
-              NUMERO_SERVICIO: this.form.PhoneNumber.value, //NUYMERO TELEFONICO
-              FECHA_INICIO: new Date(),
-              FECHA_FIN: new Date()
-            };
 
-            this.questionsService.sendLog(datosLogs)
-            .subscribe(
-              next => {
+            // //AQUI SE AGREGA EL LOG PARA LAS INTERACCIONES
+            // alert('INicio LOG: ' + userInfo.MobilePhone + " | " + this.form.PhoneNumber.value);
+            // console.log(openInfo);
+            // console.log(openToken);
+            // //userinfo esta viniendo como undefined si se analiza aqui
+            // let datosLogs: any = {
+            //   ID: 0,
+            //   INTERACCION: 'ETAPA LOGIN',
+            //   CODIGO_CLIENTE: userInfo.cust_id, //CUST_ID
+            //   CODIGO_CUENTA: userInfo.acct_id, //ACCT_ID
+            //   NUMERO_SERVICIO: this.form.PhoneNumber.value, //NUYMERO TELEFONICO
+            //   FECHA_INICIO: new Date(),
+            //   FECHA_FIN: new Date()
+            // };
+
+            // this.questionsService.sendLog(datosLogs)
+            // .subscribe(
+            //   next => {
                 
-              }, error => {
-                alert("En este momento no es posible realizar la solicitud intentelo más tarde, Gracias!");
-              });
+            //   }, error => {
+            //     alert("En este momento no es posible realizar la solicitud intentelo más tarde, Gracias!");
+            //   });
+
+            //  alert('Fin LOG'); 
 
 
             this.message = "Hemos enviado un código de seguridad a tu linea móvil, por favor ingresa el código aquí:"

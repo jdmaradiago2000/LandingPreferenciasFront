@@ -1,4 +1,3 @@
-
 import { Component, Input, OnInit, TemplateRef, ViewChild, Output, EventEmitter } from '@angular/core';
 import { FormArray, FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
@@ -87,7 +86,8 @@ export class ModalTokenComponent implements OnInit {
           this.trysFails -= 1;
           this.validationTokens(data, this.trysFails, this.openInfo).subscribe((x => {
             if (x) {
-              //redireccionar a la pagina que esta haciendo david
+              //redireccionar a la pagina que esta haciendo David
+              //Aquí generar el log cuando el token es correcto
                             
               this.message ="token correcto redireccionar aqui"; 
               // crear data nueva;

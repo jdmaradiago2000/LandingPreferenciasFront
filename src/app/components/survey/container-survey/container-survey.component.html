@@ -7,8 +7,8 @@
   <app-completed-questions [question]="completedQuestions" *ngIf="formIndex === 4"></app-completed-questions>
 
   <div class="buttons">
-    <button *ngIf="formIndex>=1 && formIndex<=3" (click)="previousStep()" type="button" class="btn btn-primary">Anterior</button>
-    <button *ngIf="formIndex>=1 && formIndex<=3" (click)="nextStep()" type="button" class="btn btn-primary">Siguiente</button>
-    <button *ngIf="formIndex===3" (click)="nextStep()" type="button" class="btn btn-primary">Terminar</button>
+    <button *ngIf="formIndex>=1 && formIndex<=3" (click)="previousStep()" type="button" class="button">Anterior</button>
+    <button *ngIf="formIndex>=1 && formIndex<=3" (click)="nextStep()" type="button" class="button">Siguiente</button>
+    <button *ngIf="formIndex===3" (click)="nextStep()" type="button" class="button">Terminar</button>
   </div>
 </div>

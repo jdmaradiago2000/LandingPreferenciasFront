@@ -3,3 +3,23 @@
     margin: 0;
     box-sizing: border-box;
 }
+
+@media screen and (min-width: 280px) and (max-width: 768px) {
+  *{
+    font-size: 90%;
+  }
+}
+
+/* @media screen and (max-width:280px){
+    *{
+		font-size: 05%;
+	} 
+
+}
+
+@media screen and (max-width:360px){
+    *{
+		font-size: 90%;
+	} 
+
+} */

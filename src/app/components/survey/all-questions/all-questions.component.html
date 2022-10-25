@@ -1,5 +1,4 @@
-<div class="questions-box" *ngFor="let questions of question">
-  <div class="question-description">Pregunta N° {{questions.orden}} -- etapa N° {{questions.etapa}}</div>
+<div class="questions-box" *ngFor="let questions of question">  
   <div class="question-description">{{questions.descripcion}}</div>
 
   <div *ngIf="questions.etapa===4">
