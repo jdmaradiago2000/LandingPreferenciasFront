@@ -1,0 +1,49 @@
+.accept{
+    margin-top: 5%;
+    width: 100%;
+    height: 3.125rem;
+    border-radius: 4px;
+    background-color: var(--movistar-blueDark);
+    color: #ffffff;
+    font-family: telefonicaSansHairline;
+    font-size: 1.125rem;
+    font-weight: normal;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: 1.28rem;
+    letter-spacing: normal;
+    text-align: center;
+}
+
+.logo{
+    height: 4rem;
+}
+
+.description {
+    font-size: 1rem;
+    font-weight: normal;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: 1rem;
+    letter-spacing: normal;
+    text-align: center;
+    margin: 0.3rem;
+    color: black;
+    font-family: telefonicaSansLight;
+    width: 550px;
+}
+
+.close{
+    position: absolute;
+    right: 0;
+    z-index: 1;
+}
+
+.modal-confirm-content{
+    width: 250px;
+    margin: auto;
+    /* overflow: auto; */
+    text-align: center;
+    vertical-align: middle;
+    border-radius: 1rem;
+}

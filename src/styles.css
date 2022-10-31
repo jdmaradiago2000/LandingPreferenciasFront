@@ -32,6 +32,8 @@
 	--grey-6: #999999	;
   }
 
+  @import '~@angular/material/prebuilt-themes/purple-green.css';
+
   body{
 	/*overflow: hidden;
     height: auto;

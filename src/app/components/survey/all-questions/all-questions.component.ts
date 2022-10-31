@@ -1,10 +1,12 @@
 import { LEAVE_SELECTOR } from '@angular/animations/browser/src/util';
 import { BreakpointObserver } from '@angular/cdk/layout';
+import { viewClassName } from '@angular/compiler';
 import { Component, OnInit, Input, ViewChild, ElementRef } from '@angular/core';
 import { FormArray, FormBuilder, FormControl, FormGroup } from "@angular/forms";
 import { AlertPromise } from 'selenium-webdriver';
 import { FormIndexService } from 'src/app/services/form-index.service';
 import { QuestionsService } from 'src/app/services/questions/questions.service';
+import { ContainerSurveyComponent } from '../container-survey/container-survey.component';
 
 @Component({
   selector: 'app-all-questions',
@@ -31,6 +33,25 @@ export class AllQuestionsComponent implements OnInit {
   public respuesta5: string = 'FALSE';
   form: FormGroup;
   nextQuestion: any [];
+
+  
+  public completedQuestions: any = [];
+  public nextQuestionUpdated: any[];
+  public previousQuestion: any [];
+  formData: any = {};
+  etapaActual: any = 1;
+  etapaAnterior: any = 0;
+  interaccion: any;
+  validPreviousQuestion: any [];
+  validNextQuestion: any [];
+
+  private codigoCliente: any;
+  private codigoCuenta: any;
+  private numeroServicio: string;
+  
+  previousQuestionAEvaluar: any [];
+
+  myForm: FormGroup;
 
   constructor(private questionsService: QuestionsService, public fb: FormBuilder, private formIndexService: FormIndexService,) {
   }
@@ -111,7 +132,7 @@ export class AllQuestionsComponent implements OnInit {
     this.respuesta4 = 'FALSE';
     this.respuesta5 = 'FALSE';
     this.respuesta1 = myValue;
-}
+  }
 
   reiniciarVariables(){
     this.respuestaAbierta = '';
@@ -126,4 +147,5 @@ export class AllQuestionsComponent implements OnInit {
     this.respuesta4 = 'FALSE'; 
     this.respuesta5 = 'FALSE';
   }
+  
 }

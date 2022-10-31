@@ -1,10 +1,15 @@
 <div class="questions-container">
-  <app-all-questions [question]="nextQuestionUpdated" *ngIf="formIndex>=1 && formIndex<=3"></app-all-questions>
-  <app-completed-questions [question]="completedQuestions" *ngIf="formIndex === 4"></app-completed-questions>
+  <app-all-questions [question]="nextQuestionUpdated" *ngIf="formIndex>=0 && formIndex<=31"></app-all-questions>
+  <app-completed-questions [question]="completedQuestions" *ngIf="formIndex === 100"></app-completed-questions>
 
-  <div class="buttons">
-    <button *ngIf="formIndex>=1 && formIndex<=3" (click)="previousStep()" type="button" class="btn btn-primary">Anterior</button>
-    <button *ngIf="formIndex>=1 && formIndex<=3" (click)="nextStep()" type="button" class="btn btn-primary">Siguiente</button>
-    <button *ngIf="formIndex===3" (click)="nextStep()" type="button" class="btn btn-primary">Terminar</button>
-  </div>
+  <div class="buttons" >
+    <button *ngIf="formIndex>=1 && formIndex<=31" (click)="previousStep()" type="button" class="button">Anterior</button>
+    <button *ngIf="formIndex<=30" (click)="nextStep(0, openInfo)" type="button" class="button">Siguiente</button>
+    <button *ngIf="formIndex===31" (click)="nextStep(1)" type="button" class="button">Terminar</button>
+  </div>  
 </div>
+
+<ng-template #openInfo >
+<app-modal-confirm>
+</app-modal-confirm>
+</ng-template>

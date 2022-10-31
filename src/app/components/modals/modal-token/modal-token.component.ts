@@ -47,16 +47,14 @@ export class ModalTokenComponent implements OnInit {
   public TimerFirstToken: NodeJS.Timer;
   public fechaDesactivacion: Date;
 
-  private codigoCliente: bigint;
-  private codigoCuenta: bigint;
+  private codigoCliente: number;
+  private codigoCuenta: number;
   private numeroServicio: string;
   private _router: Router;
 
 
   @ViewChild('openInfo')
   private openInfo: TemplateRef<any>;
-
-
 
   constructor(private questionsService: QuestionsService, 
     private modalConfirm: NgbModal, private fb: FormBuilder, private TokenSvc: TokenService, private router: Router, private loaderService: LoaderService,) {
@@ -65,7 +63,6 @@ export class ModalTokenComponent implements OnInit {
     });
     
   }
-
 
   ngOnInit(): void {
     //loading parametrics values trys and times in minutes.
@@ -161,7 +158,6 @@ export class ModalTokenComponent implements OnInit {
                 alert("En este momento no es posible realizar la solicitud intentelo más tarde, Gracias!");
               });
               this.loaderService.hide();
-              alert('Va a reconducir');   
               window.open('/survey','_self');
               //window.open(this.router.url()'http://localhost:4200/survey',"_self");
 
