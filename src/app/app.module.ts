@@ -6,9 +6,7 @@ import { NgModule } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-
 import { AppComponent } from './app.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
@@ -38,6 +36,10 @@ import { HeaderImage3Component } from './components/header-images/header-image3/
 import { StageContainerComponent } from './components/stages/stage-container/stage-container.component';
 import { HeaderImagesContainerComponent } from './components/header-images/header-images-container/header-images-container.component';
 import { AllQuestionsComponent } from './components/survey/all-questions/all-questions.component';
+import { DialogoConfirmacionComponent } from './components/dialogo-confirmacion/dialogo-confirmacion.component';
+import { MatDialogModule } from '@angular/material/dialog';
+import { MatButtonModule } from '@angular/material/button';
+import { ModalConfirmComponent } from './components/modals/modal-confirm/modal-confirm.component';
 
 @NgModule({
   declarations: [
@@ -69,6 +71,8 @@ import { AllQuestionsComponent } from './components/survey/all-questions/all-que
     StageContainerComponent,
     HeaderImagesContainerComponent,
     AllQuestionsComponent,
+    DialogoConfirmacionComponent,
+    ModalConfirmComponent,
   ],
   imports: [
     BrowserModule,
@@ -82,12 +86,15 @@ import { AllQuestionsComponent } from './components/survey/all-questions/all-que
     MatRadioModule,
     MatStepperModule,
     app_routing,
+    MatDialogModule,
+    MatButtonModule,
   ],
   exports: [
     MatFormFieldModule,
     MatInputModule
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+  entryComponents: [DialogoConfirmacionComponent]
 })
 export class AppModule { }

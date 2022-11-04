@@ -37,6 +37,9 @@ export const logToken = prefix+ 'Tokens/logToken';
 
 // PREGUNTAS Y RESPUESTAS
 export const previousQuestion = prefix + 'Question/getQuestionPrevious/';
+export const nextQuestionUpdated = prefix + 'Question/getQuestionUpdated/';
+export const previousLastQuestion = prefix + 'Question/getLastQuestionPrevious/';
+export const sendAnswers = prefix + 'Question/addRespuestas/1';
 
 // LOGS
 export const getLog = prefix + 'Question/getLog/';

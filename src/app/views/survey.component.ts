@@ -8,14 +8,16 @@ import { QuestionsService } from 'src/app/services/questions/questions.service';
 })
 export class SurveyComponent implements OnInit {
   title = 'LandingPreferencias';
-  questionList: any = [];
+  //questionList: any = [];
   constructor(private questionsService: QuestionsService){
     console.log("El componente se ha creado");
   }
 
   ngOnInit(): void {
     console.log("El componente se ha inicializado");
-    this.questionsService.getQuestions1()
+    /*
+    this.questionsService.getQuestions()
       .subscribe(response => this.questionList = response);
+      */
   }
 }

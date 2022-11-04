@@ -13,6 +13,15 @@ export class HeaderSurveyComponent implements OnInit {
   ngOnInit(): void {
     this.formIndexService.disparadorFormIndex.subscribe(data => {
       console.log("Recibiendo Data....", data)
+      if(data===0){
+        data=1;
+      }
+      if(data===31){
+        data=3;
+      }
+      if(data===100){
+        data=4;
+      }
       this.headerIndex = data;
     })
   }

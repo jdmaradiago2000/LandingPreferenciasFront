@@ -1,3 +1,4 @@
+
 import { Component, Input, OnInit, TemplateRef, ViewChild, Output, EventEmitter } from '@angular/core';
 import { FormArray, FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
@@ -7,6 +8,9 @@ import { TokenService } from 'src/app/services/token.service';
 
 import { Router } from '@angular/router';
 import { LoaderService } from 'src/app/services/loader.service';
+
+import { QuestionsService } from 'src/app/services/questions/questions.service';
+import { allowPreviousPlayerStylesMerge } from '@angular/animations/browser/src/util';
 
 
 @Component({
@@ -43,19 +47,22 @@ export class ModalTokenComponent implements OnInit {
   public TimerFirstToken: NodeJS.Timer;
   public fechaDesactivacion: Date;
 
+  private codigoCliente: number;
+  private codigoCuenta: number;
+  private numeroServicio: string;
+  private _router: Router;
+
 
   @ViewChild('openInfo')
   private openInfo: TemplateRef<any>;
 
-
-
-  constructor(private modalConfirm: NgbModal, private fb: FormBuilder, private TokenSvc: TokenService, private router: Router, private loaderService: LoaderService,) {
+  constructor(private questionsService: QuestionsService, 
+    private modalConfirm: NgbModal, private fb: FormBuilder, private TokenSvc: TokenService, private router: Router, private loaderService: LoaderService,) {
     this.Form = this.fb.group({
       'InToken': ["", Validators.required]
     });
     
   }
-
 
   ngOnInit(): void {
     //loading parametrics values trys and times in minutes.
@@ -86,9 +93,36 @@ export class ModalTokenComponent implements OnInit {
           this.trysFails -= 1;
           this.validationTokens(data, this.trysFails, this.openInfo).subscribe((x => {
             if (x) {
-              //redireccionar a la pagina que esta haciendo David
-              //Aquí generar el log cuando el token es correcto
-                            
+              //redireccionar a la pagina que esta haciendo David.
+
+              //Aquí generar el log cuando el token es correcto.
+              this.codigoCliente = JSON.parse(localStorage.getItem('CODIGO_CLIENTE'));
+              this.codigoCuenta = JSON.parse(localStorage.getItem('CODIGO_CUENTA'));
+              this.numeroServicio = JSON.parse(localStorage.getItem('NUMERO_SERVICIO'));
+
+              
+              let datosLogs: any = {
+                ID: 0,
+                INTERACCION: 'ETAPA LOGIN',
+                CODIGO_CLIENTE: this.codigoCliente, //CUST_ID
+                CODIGO_CUENTA: this.codigoCuenta, //ACCT_ID
+                NUMERO_SERVICIO: this.numeroServicio, //NUMERO TELEFONICO
+                FECHA_INICIO: new Date(),
+                FECHA_FIN: new Date()
+              };
+
+              this.questionsService.sendLog(datosLogs)
+            .subscribe(
+              next => {
+                
+              }, error => {
+                alert("En este momento no es posible realizar la solicitud intentelo más tarde, Gracias!");
+              });
+
+
+
+
+              
               this.message ="token correcto redireccionar aqui"; 
               // crear data nueva;
               
@@ -100,6 +134,36 @@ export class ModalTokenComponent implements OnInit {
               this.loaderService.hide();
               location.reload();
             } else {
+              //Aquí generar el log cuando el token es correcto 
+              //forzar para pruebas (eliminar luego de probar)
+              this.codigoCliente = JSON.parse(localStorage.getItem('CODIGO_CLIENTE'));
+              this.codigoCuenta = JSON.parse(localStorage.getItem('CODIGO_CUENTA'));
+              this.numeroServicio = JSON.parse(localStorage.getItem('NUMERO_SERVICIO'));
+
+              let datosLogs: any = {
+                ID: 0,
+                INTERACCION: 'ETAPA LOGIN',
+                CODIGO_CLIENTE: this.codigoCliente, //CUST_ID
+                CODIGO_CUENTA: this.codigoCuenta, //ACCT_ID
+                NUMERO_SERVICIO: this.numeroServicio, //NUMERO TELEFONICO
+                FECHA_INICIO: new Date(),
+                FECHA_FIN: new Date()
+              };
+
+              this.questionsService.sendLog(datosLogs)
+            .subscribe(
+              next => {
+                
+              }, error => {
+                alert("En este momento no es posible realizar la solicitud intentelo más tarde, Gracias!");
+              });
+              this.loaderService.hide();
+              window.open('/survey','_self');
+              //window.open(this.router.url()'http://localhost:4200/survey',"_self");
+
+
+
+/*
               // enviar mensaje de token invalido.     
               this.message = "El código ingresado está errado, por favor ingresa de nuevo el código aquí:"
               var datas = {
@@ -145,7 +209,7 @@ export class ModalTokenComponent implements OnInit {
                 
                 this.loaderService.hide();
 
-              }
+              }*/
             }
           }));
         }

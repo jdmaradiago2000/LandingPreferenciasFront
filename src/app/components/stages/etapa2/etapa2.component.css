@@ -59,7 +59,7 @@
   z-index: -1;
 }
 
-.progress-step1 {
+.progress-step2 {
     font-family: telefonica-sans-regular;
     font-size: calc(0.8em + 0.8vw);
     width: 2.4875rem;
@@ -140,7 +140,7 @@
       z-index: -1;
     }
     
-    .progress-step2 {
+    .progress-step1 {
         font-family: telefonica-sans-regular;
         font-size: calc(0.8em + 0.8vw);
         width: 1.8875rem;
