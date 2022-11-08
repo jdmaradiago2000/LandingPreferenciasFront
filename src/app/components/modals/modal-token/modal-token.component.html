@@ -2,6 +2,7 @@
 
   
   <div id="idModal" data-backdrop="static" data-keyboard="false">
+<<<<<<< HEAD
    <button type="button" class="btn close" data-dismiss="modal" aria-label="Close" (click)="cancel()">
     <span aria-hidden="true">&times;</span>
   </button>
@@ -20,3 +21,23 @@
   <app-modal-informative id="modalInformative" [message]="message">
   </app-modal-informative>
 </ng-template>
+=======
+    <button type="button" class="btn close" data-dismiss="modal" aria-label="Close" (click)="cancel()">
+     <span aria-hidden="true">&times;</span>
+   </button>
+   <div class="modal-body">
+     <img class="logo" src='assets/{{image}}' alt="">    
+     <div class="description">{{message}}</div>
+     <form [formGroup]="Form" *ngIf="inputView">
+       <mat-form-field appearance="fill">
+           <input matInput type="text" formControlName="InToken" class="inp" style="text-align: center;" autocomplete="off"
+           onkeypress="return (event.charCode >= 48 && event.charCode <= 57)" maxlength="4">
+         </mat-form-field>
+     </form>
+   </div>
+ </div>
+ <ng-template #openInfo>
+   <app-modal-informative id="modalInformative" [message]="message">
+   </app-modal-informative>
+ </ng-template>
+>>>>>>> prueba

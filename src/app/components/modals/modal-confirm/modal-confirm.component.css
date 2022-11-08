@@ -1,0 +1,12 @@
+.buttons{
+    display: flex;
+    justify-content: center;
+}
+
+.btn-primary{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 50px;
+    margin: 0px 3%;
+}

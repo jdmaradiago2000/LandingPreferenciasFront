@@ -1,0 +1,211 @@
+<div class="questions-box" *ngFor="let questions of question">
+  <div class="question-description">{{questions.descripcion}}</div>
+
+  <div *ngIf="questions.etapa===4">
+    Completaste todas las preguntas
+  </div>
+
+  <div *ngIf="questions.tipo_pregunta==='Cerrada'">
+    <div *ngIf="questions.tipo_respuesta==='Dicotómica'">
+      <label class="answers">
+        <div *ngIf="questions.respuesta_pregunta_1==='TRUE'">
+          <input id="dicotomica10" class="answer-text" type="radio" name="answer" value="" (change)="evaluarUnica('1')" checked> {{questions.respuesta_1}}
+        </div>
+        <div *ngIf="questions.respuesta_pregunta_1!=='TRUE'">
+          <input id="dicotomica11" class="answer-text" type="radio" name="answer" value="" (change)="evaluarUnica('1')" > {{questions.respuesta_1}}
+        </div>
+        <div *ngIf="questions.respuesta_pregunta_2==='TRUE'">
+          <input id="dicotomica20" class="answer-text" type="radio" name="answer" value="" (change)="evaluarUnica('2')" checked> {{questions.respuesta_2}}
+        </div>
+        <div *ngIf="questions.respuesta_pregunta_2!=='TRUE'">
+          <input id="dicotomica21" class="answer-text" type="radio" name="answer" value="" (change)="evaluarUnica('2')" > {{questions.respuesta_2}}
+        </div>        
+      </label>
+    </div>
+
+    <div *ngIf="questions.tipo_respuesta==='Selección única'">
+      <label class="answers">
+        <div *ngIf="questions.respuesta_pregunta_1==='TRUE'">
+          <input id="Unica10" class="answer-text" type="radio" name="answer" value="" (change)="evaluarUnica('1')" checked> {{questions.respuesta_1}}
+        </div>
+        <div *ngIf="questions.respuesta_pregunta_1!=='TRUE'">
+          <input id="Unica11" class="answer-text" type="radio" name="answer" value="" (change)="evaluarUnica('1')" > {{questions.respuesta_1}}
+        </div>
+
+        <div *ngIf="questions.respuesta_pregunta_2==='TRUE'">
+          <input id="Unica20" class="answer-text" type="radio" name="answer" value="" (change)="evaluarUnica('2')" checked> {{questions.respuesta_2}}
+        </div>
+        <div *ngIf="questions.respuesta_pregunta_2!=='TRUE'">
+          <input id="Unica21" class="answer-text" type="radio" name="answer" value="" (change)="evaluarUnica('2')" > {{questions.respuesta_2}}
+        </div>
+
+        <div *ngIf="questions.respuesta_pregunta_3==='TRUE'">
+          <input id="Unica30" class="answer-text" type="radio" name="answer" value="" (change)="evaluarUnica('3')" checked> {{questions.respuesta_3}}
+        </div>
+        <div *ngIf="questions.respuesta_pregunta_3!=='TRUE'">
+          <input id="Unica31" class="answer-text" type="radio" name="answer" value="" (change)="evaluarUnica('3')" > {{questions.respuesta_3}}
+        </div>
+
+        <div *ngIf="questions.respuesta_pregunta_4==='TRUE'">
+          <input id="Unica40" class="answer-text" type="radio" name="answer" value="" (change)="evaluarUnica('4')" checked> {{questions.respuesta_4}}
+        </div>
+        <div *ngIf="questions.respuesta_pregunta_4!=='TRUE'">
+          <input id="Unica41" class="answer-text" type="radio" name="answer" value="" (change)="evaluarUnica('4')" > {{questions.respuesta_4}}
+        </div>
+
+        <div *ngIf="questions.respuesta_pregunta_5==='TRUE'">
+          <input id="Unica50" class="answer-text" type="radio" name="answer" value="" (change)="evaluarUnica('5')" checked> {{questions.respuesta_5}}
+        </div>
+        <div *ngIf="questions.respuesta_pregunta_5!=='TRUE'">
+          <input id="Unica51" class="answer-text" type="radio" name="answer" value="" (change)="evaluarUnica('5')" > {{questions.respuesta_5}}
+        </div>
+      </label>
+    </div>
+
+    <div *ngIf="questions.tipo_respuesta==='Múltiple respuesta'">
+      <label class="answers">
+        <div *ngIf="questions.respuesta_pregunta_1==='TRUE'">
+          <input id="multiplerespuesta10" class="answer-text" type="checkbox" name="answer" value="" (change)="evaluarMultiple1($event.target.checked, 1)" checked> {{questions.respuesta_1}}
+        </div>
+        <div *ngIf="questions.respuesta_pregunta_1!=='TRUE'">
+          <input id="multiplerespuesta11" class="answer-text" type="checkbox" name="answer" value="" (change)="evaluarMultiple1($event.target.checked, 1)"> {{questions.respuesta_1}}
+        </div>
+        <div *ngIf="questions.respuesta_pregunta_2==='TRUE'">
+          <input id="multiplerespuesta20" class="answer-text" type="checkbox" name="answer" value="" (change)="evaluarMultiple1($event.target.checked, 2)" checked> {{questions.respuesta_2}}
+        </div>
+        <div *ngIf="questions.respuesta_pregunta_2!=='TRUE'">
+          <input id="multiplerespuesta21" class="answer-text" type="checkbox" name="answer" value="" (change)="evaluarMultiple1($event.target.checked, 2)"> {{questions.respuesta_2}}
+        </div>
+        <div *ngIf="questions.respuesta_pregunta_3==='TRUE'">
+          <input id="multiplerespuesta30" class="answer-text" type="checkbox" name="answer" value="" (change)="evaluarMultiple1($event.target.checked, 3)" checked> {{questions.respuesta_3}}
+        </div>
+        <div *ngIf="questions.respuesta_pregunta_3!=='TRUE'">
+          <input id="multiplerespuesta31" class="answer-text" type="checkbox" name="answer" value="" (change)="evaluarMultiple1($event.target.checked, 3)"> {{questions.respuesta_3}}
+        </div>
+        <div *ngIf="questions.respuesta_pregunta_4==='TRUE'">
+          <input id="multiplerespuesta40" class="answer-text" type="checkbox" name="answer" value="" (change)="evaluarMultiple1($event.target.checked, 4)" checked> {{questions.respuesta_4}}
+        </div>
+        <div *ngIf="questions.respuesta_pregunta_4!=='TRUE'">
+          <input id="multiplerespuesta41" class="answer-text" type="checkbox" name="answer" value="" (change)="evaluarMultiple1($event.target.checked, 4)"> {{questions.respuesta_4}}
+        </div>
+        <div *ngIf="questions.respuesta_pregunta_5==='TRUE'">
+          <input id="multiplerespuesta50" class="answer-text" type="checkbox" name="answer" value="" (change)="evaluarMultiple1($event.target.checked, 5)" checked> {{questions.respuesta_5}}
+        </div>
+        <div *ngIf="questions.respuesta_pregunta_5!=='TRUE'">
+          <input id="multiplerespuesta51" class="answer-text" type="checkbox" name="answer" value="" (change)="evaluarMultiple1($event.target.checked, 5)"> {{questions.respuesta_5}}
+        </div>
+      </label>
+    </div>
+
+    <div *ngIf="questions.tipo_respuesta==='Continua'">
+      <label class="answers">
+        
+        <div *ngIf="questions.respuesta_pregunta_1==='TRUE'">
+          <input id="continua10" class="answer-text" type="radio" name="answer" value="" (change)="evaluarUnica('1')" checked> {{questions.respuesta_1}}
+        </div>
+        <div *ngIf="questions.respuesta_pregunta_1!=='TRUE'">
+          <input id="continua11" class="answer-text" type="radio" name="answer" value="" (change)="evaluarUnica('1')" > {{questions.respuesta_1}}
+        </div>
+
+        <div *ngIf="questions.respuesta_pregunta_2==='TRUE'">
+          <input id="continua20" class="answer-text" type="radio" name="answer" value="" (change)="evaluarUnica('2')" checked> {{questions.respuesta_2}}
+        </div>
+        <div *ngIf="questions.respuesta_pregunta_2!=='TRUE'">
+          <input id="continua1" class="answer-text" type="radio" name="answer" value="" (change)="evaluarUnica('2')" > {{questions.respuesta_2}}
+        </div>
+
+        <div *ngIf="questions.respuesta_pregunta_3==='TRUE'">
+          <input id="continua30" class="answer-text" type="radio" name="answer" value="" (change)="evaluarUnica('3')" checked> {{questions.respuesta_3}}
+        </div>
+        <div *ngIf="questions.respuesta_pregunta_3!=='TRUE'">
+          <input id="continua31" class="answer-text" type="radio" name="answer" value="" (change)="evaluarUnica('3')" > {{questions.respuesta_3}}
+        </div>
+
+        <div *ngIf="questions.respuesta_pregunta_4==='TRUE'">
+          <input id="continua40" class="answer-text" type="radio" name="answer" value="" (change)="evaluarUnica('4')" checked> {{questions.respuesta_4}}
+        </div>
+        <div *ngIf="questions.respuesta_pregunta_4!=='TRUE'">
+          <input id="continua41" class="answer-text" type="radio" name="answer" value="" (change)="evaluarUnica('4')" > {{questions.respuesta_4}}
+        </div>
+
+        <div *ngIf="questions.respuesta_pregunta_5==='TRUE'">
+          <input id="continua50" class="answer-text" type="radio" name="answer" value="" (change)="evaluarUnica('5')" checked> {{questions.respuesta_5}}
+        </div>
+        <div *ngIf="questions.respuesta_pregunta_5!=='TRUE'">
+          <input id="continua51" class="answer-text" type="radio" name="answer" value="" (change)="evaluarUnica('5')" > {{questions.respuesta_5}}
+        </div>
+      </label>
+    </div>
+  </div>
+
+  <div *ngIf="questions.tipo_pregunta==='Abierta'">
+    <div *ngIf="questions.tipo_respuesta==='Abierta'">
+      <label class="answers">
+        <div *ngIf="questions.respuesta_pregunta_1===''">
+          <input id="textBox1" class="answer-text" type="text" name="answer" value="" (change)="evaluarAbierta1($event.target.value)">
+        </div>
+        <div *ngIf="questions.respuesta_pregunta_1!==''">
+          <input id="textBox2" class="answer-text" type="text" name="answer" value={{questions.respuesta_pregunta_1}}  (change)="evaluarAbierta1($event.target.value)" >
+        </div>        
+      </label>
+    </div>
+  </div>
+
+  <!-- <div *ngIf="questions.tipo_pregunta==='Bateria'">
+    <div *ngIf="questions.tipo_respuesta==='Dicotómica'">
+      <label class="answers">
+        <input id="dicotomica1" class="answer-text" type="radio" name="answer" value=""> {{questions.respuesta_1}}
+        <br>
+        <input id="dicotomica2" class="answer-text" type="radio" name="answer" value=""> {{questions.respuesta_2}}
+      </label>
+    </div>
+
+    <div *ngIf="questions.tipo_respuesta==='Selección única'">
+      <label class="answers">
+        <input id="Unica1" class="answer-text" type="radio" name="answer" value=""> {{questions.respuesta_1}}
+        <br>
+        <input id="Unica2" class="answer-text" type="radio" name="answer" value=""> {{questions.respuesta_2}}
+        <br>
+        <input id="Unica3" class="answer-text" type="radio" name="answer" value=""> {{questions.respuesta_3}}
+        <br>
+        <input id="Unica4" class="answer-text" type="radio" name="answer" value=""> {{questions.respuesta_4}}
+        <br>
+        <input id="Unica5" class="answer-text" type="radio" name="answer" value=""> {{questions.respuesta_5}}
+      </label>
+    </div>
+
+    <div *ngIf="questions.tipo_respuesta==='Múltiple respuesta'">
+      <label class="answers">
+        <input id="multiplerespuesta1" class="answer-text" type="checkbox" name="answer" value=""> {{questions.respuesta_1}}
+        <br>
+        <input id="multiplerespuesta2" class="answer-text" type="checkbox" name="answer" value=""> {{questions.respuesta_2}}
+        <br>
+        <input id="multiplerespuesta3" class="answer-text" type="checkbox" name="answer" value=""> {{questions.respuesta_3}}
+        <br>
+        <input id="multiplerespuesta4" class="answer-text" type="checkbox" name="answer" value=""> {{questions.respuesta_4}}
+        <br>
+        <input id="multiplerespuesta5" class="answer-text" type="checkbox" name="answer" value=""> {{questions.respuesta_5}}
+      </label>
+    </div>
+
+    <div *ngIf="questions.tipo_respuesta==='Continua'">
+      <label class="answers">
+        <input id="continua1" class="answer-text" type="radio" name="answer" value=""> {{questions.respuesta_1}}
+        <br>
+        <input id="continua2" class="answer-text" type="radio" name="answer" value=""> {{questions.respuesta_2}}
+        <br>
+        <input id="continua3" class="answer-text" type="radio" name="answer" value=""> {{questions.respuesta_3}}
+        <br>
+        <input id="continua4" class="answer-text" type="radio" name="answer" value=""> {{questions.respuesta_4}}
+        <br>
+        <input id="continua5" class="answer-text" type="radio" name="answer" value=""> {{questions.respuesta_5}}
+      </label>
+    </div>
+
+    <div *ngIf="questions.tipo_respuesta==='Abierta'">
+      <label class="answers">
+        <input id="textBox1" class="answer-text" type="text" name="answer" value="">
+      </label>
+    </div>
+  </div> -->
+</div>
