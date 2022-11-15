@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import * as io from 'socket.io-client';
 
 @Component({
   selector: 'app-root',
@@ -6,5 +7,10 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'LandingPreferencias';
+  private socket;
+
+  constructor(){
+    this.socket = io();
+    }
+  //title = 'LandingPreferencias';
 }

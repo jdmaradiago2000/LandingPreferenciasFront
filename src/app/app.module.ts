@@ -40,6 +40,7 @@ import { DialogoConfirmacionComponent } from './components/dialogo-confirmacion/
 import { MatDialogModule } from '@angular/material/dialog';
 import { MatButtonModule } from '@angular/material/button';
 import { ModalConfirmComponent } from './components/modals/modal-confirm/modal-confirm.component';
+//import { ModalComponent } from './modal/modal.component';
 
 @NgModule({
   declarations: [

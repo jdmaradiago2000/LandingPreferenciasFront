@@ -1,12 +1,13 @@
 import { LEAVE_SELECTOR } from '@angular/animations/browser/src/util';
 import { BreakpointObserver } from '@angular/cdk/layout';
-import { viewClassName } from '@angular/compiler';
-import { Component, OnInit, Input, ViewChild, ElementRef } from '@angular/core';
+import { IfStmt, viewClassName } from '@angular/compiler';
+import { Component, OnInit, Input, ViewChild, ElementRef, OnDestroy } from '@angular/core';
 import { FormArray, FormBuilder, FormControl, FormGroup } from "@angular/forms";
 import { AlertPromise } from 'selenium-webdriver';
 import { FormIndexService } from 'src/app/services/form-index.service';
 import { QuestionsService } from 'src/app/services/questions/questions.service';
 import { ContainerSurveyComponent } from '../container-survey/container-survey.component';
+import { asLiteral } from '@angular/compiler/src/render3/view/util';
 
 @Component({
   selector: 'app-all-questions',
@@ -53,6 +54,9 @@ export class AllQuestionsComponent implements OnInit {
 
   myForm: FormGroup;
 
+  respuestaBateria: string;
+  buscarPreguntaBateria: string = 'NO';
+
   constructor(private questionsService: QuestionsService, public fb: FormBuilder, private formIndexService: FormIndexService,) {
   }
   
@@ -60,15 +64,24 @@ export class AllQuestionsComponent implements OnInit {
   ngOnInit() {
   }
 
+  ngOnDestroy(){
+    //alert('Deberia descontar un usuario');
+  }
+
   evaluarUnica(myValue) {  
     switch(myValue)
     {
-      case '1' : this.respuesta1 = 'TRUE'; this.respuesta2 = 'FALSE'; this.respuesta3 = 'FALSE'; this.respuesta4 = 'FALSE'; this.respuesta5 = 'FALSE'; break;
-      case '2' : this.respuesta1 = 'FALSE'; this.respuesta2 = 'TRUE'; this.respuesta3 = 'FALSE'; this.respuesta4 = 'FALSE'; this.respuesta5 = 'FALSE'; break;
-      case '3' : this.respuesta1 = 'FALSE'; this.respuesta2 = 'FALSE'; this.respuesta3 = 'TRUE'; this.respuesta4 = 'FALSE'; this.respuesta5 = 'FALSE'; break;
-      case '4' : this.respuesta1 = 'FALSE'; this.respuesta2 = 'FALSE'; this.respuesta3 = 'FALSE'; this.respuesta4 = 'TRUE'; this.respuesta5 = 'FALSE'; break;
-      case '5' : this.respuesta1 = 'FALSE'; this.respuesta2 = 'FALSE'; this.respuesta3 = 'FALSE'; this.respuesta4 = 'FALSE'; this.respuesta5 = 'TRUE'; break;
-      default: this.respuesta1 = 'FALSE'; this.respuesta2 = 'FALSE'; this.respuesta3 = 'FALSE'; this.respuesta4 = 'FALSE'; this.respuesta5 = 'FALSE'; break;
+      case '1' : this.respuesta1 = 'TRUE'; this.respuesta2 = 'FALSE'; this.respuesta3 = 'FALSE'; this.respuesta4 = 'FALSE'; this.respuesta5 = 'FALSE'; this.buscarPreguntaBateria = 'SI'; break;
+      case '2' : this.respuesta1 = 'FALSE'; this.respuesta2 = 'TRUE'; this.respuesta3 = 'FALSE'; this.respuesta4 = 'FALSE'; this.respuesta5 = 'FALSE'; this.buscarPreguntaBateria = 'SI'; break;
+      case '3' : this.respuesta1 = 'FALSE'; this.respuesta2 = 'FALSE'; this.respuesta3 = 'TRUE'; this.respuesta4 = 'FALSE'; this.respuesta5 = 'FALSE'; this.buscarPreguntaBateria = 'SI'; break;
+      case '4' : this.respuesta1 = 'FALSE'; this.respuesta2 = 'FALSE'; this.respuesta3 = 'FALSE'; this.respuesta4 = 'TRUE'; this.respuesta5 = 'FALSE'; this.buscarPreguntaBateria = 'SI'; break;
+      case '5' : this.respuesta1 = 'FALSE'; this.respuesta2 = 'FALSE'; this.respuesta3 = 'FALSE'; this.respuesta4 = 'FALSE'; this.respuesta5 = 'TRUE'; this.buscarPreguntaBateria = 'SI'; break;
+      default: this.respuesta1 = 'FALSE'; this.respuesta2 = 'FALSE'; this.respuesta3 = 'FALSE'; this.respuesta4 = 'FALSE'; this.respuesta5 = 'FALSE'; this.buscarPreguntaBateria = 'NO'; break;
+    }
+
+    if(this.buscarPreguntaBateria=='SI')
+    {
+      alert('Entra a buscar bateria');
     }
   }
 
@@ -146,6 +159,5 @@ export class AllQuestionsComponent implements OnInit {
     this.respuesta3 = 'FALSE'; 
     this.respuesta4 = 'FALSE'; 
     this.respuesta5 = 'FALSE';
-  }
-  
+  }  
 }

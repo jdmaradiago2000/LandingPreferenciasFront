@@ -1,11 +1,11 @@
-import { Container } from '@angular/compiler/src/i18n/i18n_ast';
+//import { Container } from '@angular/compiler/src/i18n/i18n_ast';
 import { Component, Input, OnInit, ViewChild } from '@angular/core';
-import { Router } from '@angular/router';
+//import { Router } from '@angular/router';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
-import { nextQuestionUpdated } from 'src/app/services/url';
+//import { nextQuestionUpdated } from 'src/app/services/url';
 import { ContainerSurveyComponent } from '../../survey/container-survey/container-survey.component';
 import { QuestionsService } from 'src/app/services/questions/questions.service';
-import { THIS_EXPR } from '@angular/compiler/src/output/output_ast';
+//import { THIS_EXPR } from '@angular/compiler/src/output/output_ast';
 import { SharedService } from 'src/app/services/sharedService/shared.service';
 
 @Component({

@@ -33,9 +33,6 @@ export const amountTryTokenUntyped = prefix + 'Tokens/cantidadIntentosTokenSinDi
 export const amountTryToken = prefix +'Tokens/cantidadIntentosToken';
 export const addBlock = prefix + 'Bloqueo/blockUser';
 
-<<<<<<< HEAD
-export const logToken = prefix+ 'Tokens/logToken';
-=======
 export const logToken = prefix+ 'Tokens/logToken';
 
 // PREGUNTAS Y RESPUESTAS
@@ -46,4 +43,3 @@ export const sendAnswers = prefix + 'Question/addRespuestas/1';
 
 // LOGS
 export const getLog = prefix + 'Question/getLog/';
->>>>>>> prueba

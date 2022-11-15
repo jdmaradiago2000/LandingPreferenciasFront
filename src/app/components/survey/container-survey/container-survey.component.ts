@@ -2,12 +2,12 @@ import { Component, OnInit, ViewChild, Input, OnChanges, SimpleChanges, Injectab
 import { FormIndexService } from 'src/app/services/form-index.service';
 import { QuestionsService } from 'src/app/services/questions/questions.service';
 import { LoaderService } from 'src/app/services/loader.service';
-import { AllQuestionsComponent } from '../all-questions/all-questions.component';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { THIS_EXPR } from '@angular/compiler/src/output/output_ast';
-import { LOCALE_DATA } from '@angular/common/src/i18n/locale_data';
+import { AllQuestionsComponent } from 'src/app/components/survey/all-questions/all-questions.component';
+//import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+//import { THIS_EXPR } from '@angular/compiler/src/output/output_ast';
+//import { LOCALE_DATA } from '@angular/common/src/i18n/locale_data';
 import { LOCALE_ID, Inject } from "@angular/core";
-import { formatDate } from "@angular/common";
+//import { formatDate } from "@angular/common";
 import { of, Subscription  } from "rxjs";
 import { SharedService } from 'src/app/services/sharedService/shared.service';
 
@@ -35,8 +35,6 @@ export class ContainerSurveyComponent implements OnInit {
   public etapaAnterior: any = 0;
   public etapaSiguiente: any;
   public interaccion: any;
-  //validPreviousQuestion: any [];
-  //validNextQuestion: any [];
   public pregunta_anterior: any;
 
   public codigoCliente: number;
@@ -72,7 +70,7 @@ export class ContainerSurveyComponent implements OnInit {
   }
 
   dataLoad(response: any) {
-    console.log("servicio -> ", response)
+    //Aqui ya ha guardado
     this.nextQuestionUpdated = response;
     if(this.nextQuestionUpdated[0].contadora_anterior<1){
       this.etapaActual = 0;
@@ -90,15 +88,11 @@ export class ContainerSurveyComponent implements OnInit {
       this.etapaSiguiente = 100;
     }
 
-    /*if(this.etapaSiguiente===100)
-    {
-      this.construirConfirmacion();
-      this.etapaActual = 100;
-    }*/
-
     localStorage.setItem('CODIGO_PREGUNTA', JSON.stringify(this.nextQuestionUpdated[0].codigo_pregunta));
     this.formIndex = parseInt(this.etapaActual); 
+    //Aqui debe cargar la nueva pregunta
     this.formIndexService.disparadorFormIndex.emit(parseInt(this.etapaActual));
+    
   }
 
   dataLoadTerminar(response: any) {
@@ -108,12 +102,10 @@ export class ContainerSurveyComponent implements OnInit {
       this.construirConfirmacion();
       this.etapaActual = 100;
     }
-
-    console.log(this.etapaActual);
+    
     localStorage.setItem('CODIGO_PREGUNTA', JSON.stringify(this.nextQuestionUpdated[0].codigo_pregunta));
     this.formIndex = parseInt(this.etapaActual); 
     this.formIndexService.disparadorFormIndex.emit(parseInt(this.etapaActual));
-
   }
 
   
@@ -297,6 +289,6 @@ export class ContainerSurveyComponent implements OnInit {
   }
 
   public refrescarModal(){
-    alert('Refrescar Modal');
+    //alert('Refrescar Modal');
   }
 }

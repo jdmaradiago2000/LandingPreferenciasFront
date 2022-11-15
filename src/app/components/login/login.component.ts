@@ -6,10 +6,7 @@ import { LoginService } from 'src/app/services/login.service';
 import {TokenService} from 'src/app/services/token.service';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import {ModalTokenComponent} from 'src/app/components/modals/modal-token/modal-token.component';
-<<<<<<< HEAD
-=======
 import { QuestionsService } from 'src/app/services/questions/questions.service';
->>>>>>> prueba
 
 
 @Component({
@@ -32,12 +29,8 @@ export class LoginComponent implements OnInit {
   submittedCaptcha = false;
 
 
-<<<<<<< HEAD
-  constructor(private loginService: LoginService,
-=======
   constructor(private questionsService: QuestionsService, 
     private loginService: LoginService,
->>>>>>> prueba
     private _sanitizer: DomSanitizer,
     private loaderService: LoaderService,
     private modalConfirm: NgbModal,
@@ -50,12 +43,8 @@ export class LoginComponent implements OnInit {
       //PhoneNumber: new FormControl('', [Validators.required, Validators.minLength(10), Validators.maxLength(10), Validators.pattern(/^-?(0|[1-9]\d*)?$/)]),
       PhoneNumber: new FormControl('3185310413', [Validators.required, Validators.minLength(10), Validators.maxLength(10), Validators.pattern(/^-?(0|[1-9]\d*)?$/)]),
       //IdentificationDocument: new FormControl('', [Validators.required, Validators.minLength(4), Validators.maxLength(10), Validators.pattern(/^-?(0|[1-9]\d*)?$/)]),
-<<<<<<< HEAD
-      IdentificationDocument: new FormControl('1068930535', [Validators.required, Validators.minLength(4), Validators.maxLength(10), Validators.pattern(/^-?(0|[1-9]\d*)?$/)]),
-=======
       //IdentificationDocument: new FormControl('1068930535', [Validators.required, Validators.minLength(4), Validators.maxLength(10), Validators.pattern(/^-?(0|[1-9]\d*)?$/)]),
       IdentificationDocument: new FormControl('1130598267', [Validators.required, Validators.minLength(4), Validators.maxLength(10), Validators.pattern(/^-?(0|[1-9]\d*)?$/)]),
->>>>>>> prueba
       DocumentType: new FormControl('1', [Validators.required]),
 
       textCaptcha: new FormControl('', [Validators.required]),
@@ -155,8 +144,6 @@ export class LoginComponent implements OnInit {
             this.modalConfirm.open(openInfo,{centered : true});
             
           }if(this.message.includes("token")){
-<<<<<<< HEAD
-=======
             var splitted = this.message.split("/", 3);
             localStorage.setItem('CODIGO_CLIENTE', JSON.stringify(splitted[1].toString()));
             localStorage.setItem('CODIGO_CUENTA', JSON.stringify(splitted[2].toString()));
@@ -180,13 +167,12 @@ export class LoginComponent implements OnInit {
                 alert("En este momento no es posible realizar la solicitud intentelo más tarde, Gracias!");
               });
               
->>>>>>> prueba
             this.message = "Hemos enviado un código de seguridad a tu linea móvil, por favor ingresa el código aquí:"
             // logica de token
             var data :any = {
                 Destinatario : userInfo.MobilePhone
             }
-            console.log("entra al envio del token");
+            //Entra al envio del token
             this.generateFirstToken(data,openInfo);
 
             this.modalConfirm.open(openToken, { keyboard : false, centered : true ,backdrop : 'static' });    
@@ -263,8 +249,4 @@ export class LoginComponent implements OnInit {
 
 
 
-<<<<<<< HEAD
 }
-=======
-}
->>>>>>> prueba

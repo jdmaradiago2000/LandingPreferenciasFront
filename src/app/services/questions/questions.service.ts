@@ -47,7 +47,6 @@ export class QuestionsService {
 
   getQuestionsNextUpdated(data: any): any{
 
-    console.log(data)
     return this.http.get(nextQuestionUpdated + data, this.getHttpOptions()).pipe();
   }
   

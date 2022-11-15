@@ -9,12 +9,9 @@ import { TokenService } from 'src/app/services/token.service';
 import { Router } from '@angular/router';
 import { LoaderService } from 'src/app/services/loader.service';
 
-<<<<<<< HEAD
-=======
 import { QuestionsService } from 'src/app/services/questions/questions.service';
 import { allowPreviousPlayerStylesMerge } from '@angular/animations/browser/src/util';
 
->>>>>>> prueba
 
 @Component({
   selector: 'app-modal-token',
@@ -50,36 +47,23 @@ export class ModalTokenComponent implements OnInit {
   public TimerFirstToken: NodeJS.Timer;
   public fechaDesactivacion: Date;
 
-<<<<<<< HEAD
-=======
   private codigoCliente: number;
   private codigoCuenta: number;
   private numeroServicio: string;
   private _router: Router;
 
->>>>>>> prueba
 
   @ViewChild('openInfo')
   private openInfo: TemplateRef<any>;
 
-<<<<<<< HEAD
-
-
-  constructor(private modalConfirm: NgbModal, private fb: FormBuilder, private TokenSvc: TokenService, private router: Router, private loaderService: LoaderService,) {
-=======
   constructor(private questionsService: QuestionsService, 
     private modalConfirm: NgbModal, private fb: FormBuilder, private TokenSvc: TokenService, private router: Router, private loaderService: LoaderService,) {
->>>>>>> prueba
     this.Form = this.fb.group({
       'InToken': ["", Validators.required]
     });
     
   }
 
-<<<<<<< HEAD
-
-=======
->>>>>>> prueba
   ngOnInit(): void {
     //loading parametrics values trys and times in minutes.
     // crear el tiempo de espera 
@@ -109,10 +93,6 @@ export class ModalTokenComponent implements OnInit {
           this.trysFails -= 1;
           this.validationTokens(data, this.trysFails, this.openInfo).subscribe((x => {
             if (x) {
-<<<<<<< HEAD
-              //redireccionar a la pagina que esta haciendo david
-                            
-=======
               //redireccionar a la pagina que esta haciendo David.
 
               //Aquí generar el log cuando el token es correcto.
@@ -143,7 +123,6 @@ export class ModalTokenComponent implements OnInit {
 
 
               
->>>>>>> prueba
               this.message ="token correcto redireccionar aqui"; 
               // crear data nueva;
               
@@ -155,8 +134,6 @@ export class ModalTokenComponent implements OnInit {
               this.loaderService.hide();
               location.reload();
             } else {
-<<<<<<< HEAD
-=======
               //Aquí generar el log cuando el token es correcto 
               //forzar para pruebas (eliminar luego de probar)
               this.codigoCliente = JSON.parse(localStorage.getItem('CODIGO_CLIENTE'));
@@ -187,7 +164,6 @@ export class ModalTokenComponent implements OnInit {
 
 
 /*
->>>>>>> prueba
               // enviar mensaje de token invalido.     
               this.message = "El código ingresado está errado, por favor ingresa de nuevo el código aquí:"
               var datas = {
@@ -233,11 +209,7 @@ export class ModalTokenComponent implements OnInit {
                 
                 this.loaderService.hide();
 
-<<<<<<< HEAD
-              }
-=======
               }*/
->>>>>>> prueba
             }
           }));
         }
@@ -368,7 +340,7 @@ export class ModalTokenComponent implements OnInit {
 
 
   metodoTest() {
-    console.log("entra");
+    //console.log("entra");
   }
 
   validTimeFirstToken(openInfo: any) {
@@ -498,8 +470,4 @@ export class ModalTokenComponent implements OnInit {
     return new Promise(resolve => setTimeout(resolve, ms));
   }
 
-<<<<<<< HEAD
 }
-=======
-}
->>>>>>> prueba

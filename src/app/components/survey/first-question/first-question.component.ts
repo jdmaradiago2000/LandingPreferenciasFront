@@ -28,7 +28,7 @@ export class FirstQuestionComponent implements OnInit {
   
 
   ngOnInit() {
-    console.log(this.question);
+    //console.log(this.question);
   }
 
   evaluarUnica(myValue) {  
